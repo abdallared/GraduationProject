@@ -1,0 +1,36 @@
+.tilt-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+  overflow: hidden;
+}
+
+.tilt-card-spotlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: radial-gradient(
+    600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    var(--spotlight-color, rgba(56, 189, 248, 0.15)),
+    transparent 60%
+  );
+  z-index: 2;
+}
+
+.tilt-card:hover .tilt-card-spotlight {
+  opacity: 1;
+}
+
+.tilt-card-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+}

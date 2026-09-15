@@ -1,0 +1,435 @@
+/* ========================================
+   Ally Vision — Technology Infographic CSS
+   ======================================== */
+
+.technology {
+  background: var(--bg-dark);
+  color: var(--text-on-dark);
+  position: relative;
+  overflow: hidden;
+  padding: var(--section-py) 0;
+}
+
+.technology::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.5), rgba(217, 70, 239, 0.5), transparent);
+}
+
+/* ---- 7-Stage Hero Infographic Showcase ---- */
+.seven-stage-hero-wrapper {
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.seven-stage-hero-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 60%;
+  background: radial-gradient(ellipse at center, rgba(56, 189, 248, 0.12) 0%, rgba(217, 70, 239, 0.08) 50%, transparent 75%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.seven-stage-image-frame {
+  position: relative;
+  z-index: 1;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.65), 0 0 40px rgba(56, 189, 248, 0.12);
+  background: rgba(11, 19, 31, 0.8);
+}
+
+.seven-stage-main-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Stage Columns Navigation Cards */
+.seven-stage-columns-nav {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 1.75rem;
+  gap: 1.25rem;
+}
+
+.stage-nav-card {
+  background: rgba(20, 32, 50, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 1.2rem 1.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all var(--transition-normal);
+}
+
+.stage-nav-card:hover {
+  background: rgba(28, 44, 68, 0.8);
+  border-color: rgba(56, 189, 248, 0.35);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.stage-nav-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-pill);
+  align-self: flex-start;
+}
+
+.badge-blue {
+  color: #38BDF8;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.badge-cyan {
+  color: #2DD4BF;
+  background: rgba(45, 212, 191, 0.12);
+  border: 1px solid rgba(45, 212, 191, 0.3);
+}
+
+.badge-purple {
+  color: #C084FC;
+  background: rgba(192, 132, 252, 0.12);
+  border: 1px solid rgba(192, 132, 252, 0.3);
+}
+
+.badge-pink {
+  color: #F472B6;
+  background: rgba(244, 114, 182, 0.12);
+  border: 1px solid rgba(244, 114, 182, 0.3);
+}
+
+.stage-nav-info h4 {
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: var(--white);
+  margin: 0;
+  font-family: var(--font-heading);
+}
+
+.stage-nav-info p {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin: 0.15rem 0 0;
+  line-height: 1.4;
+}
+
+/* ---- Matrix Simulator & Core Philosophy Grid ---- */
+.matrix-and-funnel-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+  margin-bottom: 4rem;
+}
+
+.matrix-simulator-card,
+.schematic-showcase-card {
+  background: rgba(20, 32, 50, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.matrix-card-header {
+  margin-bottom: 1.5rem;
+}
+
+.matrix-card-header h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--white);
+  margin: 0.4rem 0 0.3rem;
+}
+
+.matrix-card-header p {
+  font-size: 0.88rem;
+  color: var(--text-on-dark-muted);
+}
+
+.matrix-preset-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.matrix-preset-btn {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.45rem 0.9rem;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.matrix-preset-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+}
+
+.matrix-preset-btn.active {
+  background: rgba(34, 197, 94, 0.2);
+  border-color: var(--accent);
+  color: #86EFAC;
+}
+
+.matrix-display-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.matrix-grid-5x5 {
+  display: grid;
+  grid-template-columns: repeat(5, 54px);
+  grid-template-rows: repeat(5, 54px);
+  gap: 8px;
+}
+
+.matrix-cell {
+  border-radius: 8px;
+  border: 1px solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  user-select: none;
+  cursor: pointer;
+}
+
+.matrix-cell:hover,
+.matrix-cell.hovered {
+  border-color: #86EFAC !important;
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.5) !important;
+  filter: brightness(1.2);
+}
+
+.matrix-cell:active {
+  transform: scale(0.92) !important;
+}
+
+.matrix-cell-val {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1;
+}
+
+.matrix-cell-mm {
+  font-size: 0.6rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 2px;
+}
+
+.matrix-legend {
+  width: 100%;
+  max-width: 360px;
+}
+
+.matrix-legend-scale {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-bottom: 0.6rem;
+}
+
+.matrix-legend-gradient {
+  flex-grow: 1;
+  height: 6px;
+  margin: 0 0.75rem;
+  border-radius: 3px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(34, 197, 94, 0.9));
+}
+
+.matrix-legend-note {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* Philosophy Card */
+.schematic-showcase-card h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--white);
+  margin: 0.4rem 0 0.5rem;
+}
+
+.schematic-showcase-card > p {
+  font-size: 0.9rem;
+  color: var(--text-on-dark-muted);
+  line-height: 1.7;
+  margin-bottom: 1.8rem;
+}
+
+.schematic-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.schematic-highlight-item {
+  font-size: 0.86rem;
+  color: var(--text-on-dark-muted);
+  line-height: 1.6;
+  padding: 0.85rem 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--accent);
+}
+
+.schematic-highlight-item strong {
+  color: var(--white);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+
+
+/* ---- Hardware Deep Dive Block ---- */
+.tech-showcase {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 3.5rem;
+  align-items: center;
+  padding: 3rem;
+  background: rgba(20, 32, 50, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-xl);
+  backdrop-filter: blur(10px);
+}
+
+.tech-showcase-content h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--white);
+  margin: 0.8rem 0 1.2rem;
+}
+
+.tech-showcase-content p {
+  color: var(--text-on-dark-muted);
+  line-height: 1.8;
+  margin-bottom: 1.8rem;
+  font-size: 1.02rem;
+}
+
+.tech-showcase-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.tech-showcase-features li {
+  position: relative;
+  padding-left: 1.8rem;
+  color: var(--text-on-dark);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.tech-showcase-features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.tech-showcase-features strong {
+  color: var(--white);
+}
+
+.tech-showcase-visual {
+  position: relative;
+}
+
+.tech-showcase-img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  display: block;
+}
+
+.tech-showcase-glow {
+  position: absolute;
+  inset: -10px;
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+/* ---- Responsiveness ---- */
+@media (max-width: 1100px) {
+  .matrix-and-funnel-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1000px) {
+  .seven-stage-columns-nav {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .tech-showcase {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .seven-stage-columns-nav {
+    grid-template-columns: 1fr;
+  }
+
+  .matrix-grid-5x5 {
+    grid-template-columns: repeat(5, 44px);
+    grid-template-rows: repeat(5, 44px);
+    gap: 6px;
+  }
+
+  .matrix-cell-val {
+    font-size: 1rem;
+  }
+
+  .matrix-cell-mm {
+    display: none;
+  }
+}
