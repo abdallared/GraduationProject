@@ -1,0 +1,7 @@
+# Ignore heavy temporary and cache files
+*.json
+*.txt
+*.log
+*.pt
+*.onnx
+!requirements.txt
