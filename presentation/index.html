@@ -1,0 +1,1649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ally Vision — Graduation Presentation</title>
+
+  <!-- Reveal.js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Chart.js for parametric study -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+  <!-- GSAP for animations -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+  <style>
+    /* ═══════════════════════════════════════════════════════════════
+       ROOT DESIGN TOKENS
+    ═══════════════════════════════════════════════════════════════ */
+    :root {
+      --bg-primary: #060B14;
+      --bg-secondary: #0A1628;
+      --bg-card: rgba(15, 25, 45, 0.75);
+      --accent-green: #27AE60;
+      --accent-cyan: #38BDF8;
+      --accent-blue: #1B4D7A;
+      --accent-purple: #A855F7;
+      --accent-orange: #F59E0B;
+      --accent-red: #EF4444;
+      --text-primary: #E8EDF5;
+      --text-secondary: #94A3B8;
+      --text-muted: #64748B;
+      --border-subtle: rgba(56, 189, 248, 0.12);
+      --glow-green: rgba(39, 174, 96, 0.35);
+      --glow-cyan: rgba(56, 189, 248, 0.25);
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       GLOBAL OVERRIDES
+    ═══════════════════════════════════════════════════════════════ */
+    .reveal {
+      font-family: var(--font-sans);
+      color: var(--text-primary);
+      font-size: 22px;
+    }
+
+    .reveal .slides {
+      text-align: left;
+    }
+
+    .reveal .slides section {
+      padding: 40px 60px;
+      height: 100%;
+      display: flex !important;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+      font-family: var(--font-sans);
+      color: var(--text-primary);
+      text-transform: none;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .reveal h1 { font-size: 3em; font-weight: 900; }
+    .reveal h2 { font-size: 2em; font-weight: 800; }
+    .reveal h3 { font-size: 1.35em; font-weight: 700; }
+    .reveal h4 { font-size: 1.1em; font-weight: 600; }
+
+    .reveal p {
+      color: var(--text-secondary);
+      line-height: 1.7;
+      font-weight: 400;
+      max-width: 850px;
+    }
+
+    .reveal ul, .reveal ol {
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    .reveal strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       CANVAS BACKGROUND — ANIMATED PARTICLES
+    ═══════════════════════════════════════════════════════════════ */
+    #particles-canvas {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .reveal .slide-background {
+      background: var(--bg-primary) !important;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       UTILITY CLASSES
+    ═══════════════════════════════════════════════════════════════ */
+    .accent { color: var(--accent-green); }
+    .accent-cyan { color: var(--accent-cyan); }
+    .accent-purple { color: var(--accent-purple); }
+    .accent-orange { color: var(--accent-orange); }
+    .accent-red { color: var(--accent-red); }
+    .mono { font-family: var(--font-mono); font-size: 0.85em; }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 18px;
+      border-radius: 100px;
+      font-size: 0.7em;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      background: rgba(39, 174, 96, 0.12);
+      color: var(--accent-green);
+      border: 1px solid rgba(39, 174, 96, 0.25);
+    }
+
+    .badge-cyan {
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--accent-cyan);
+      border-color: rgba(56, 189, 248, 0.25);
+    }
+
+    .badge-purple {
+      background: rgba(168, 85, 247, 0.12);
+      color: var(--accent-purple);
+      border-color: rgba(168, 85, 247, 0.25);
+    }
+
+    .divider {
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-green), var(--accent-cyan));
+      border: none;
+      border-radius: 3px;
+      margin: 14px 0 20px 0;
+    }
+
+    .flex-row {
+      display: flex;
+      gap: 32px;
+      align-items: flex-start;
+    }
+
+    .flex-col {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .flex-1 { flex: 1; }
+
+    /* ═══════════════════════════════════════════════════════════════
+       SLIDE 1 — COVER
+    ═══════════════════════════════════════════════════════════════ */
+    .cover-slide {
+      text-align: center !important;
+      justify-content: center !important;
+      align-items: center !important;
+      position: relative;
+    }
+
+    .cover-slide .logo-ring {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      border: 3px solid var(--accent-green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      position: relative;
+      animation: pulse-ring 3s ease-in-out infinite;
+    }
+
+    .cover-slide .logo-ring::before {
+      content: '';
+      position: absolute;
+      inset: -8px;
+      border-radius: 50%;
+      border: 1px solid rgba(39, 174, 96, 0.2);
+      animation: pulse-ring 3s ease-in-out infinite reverse;
+    }
+
+    .cover-slide .logo-ring svg {
+      width: 68px;
+      height: 68px;
+    }
+
+    @keyframes pulse-ring {
+      0%, 100% { box-shadow: 0 0 20px var(--glow-green), 0 0 60px rgba(39, 174, 96, 0.1); }
+      50% { box-shadow: 0 0 40px var(--glow-green), 0 0 100px rgba(39, 174, 96, 0.2); }
+    }
+
+    .cover-slide h1 {
+      font-size: 3.4em;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, #E8EDF5 30%, #27AE60 70%, #38BDF8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .cover-slide .tagline {
+      font-size: 1.15em;
+      color: var(--text-secondary);
+      max-width: 700px;
+      margin: 0 auto 32px;
+      line-height: 1.6;
+    }
+
+    .cover-meta {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78em;
+      color: var(--text-muted);
+      margin-top: 16px;
+    }
+
+    .cover-meta span {
+      color: var(--text-secondary);
+    }
+
+    .cover-bottom-bar {
+      position: absolute;
+      bottom: 28px;
+      left: 0; right: 0;
+      display: flex;
+      justify-content: center;
+      gap: 36px;
+      font-size: 0.65em;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       SLIDE 2 — TEAM
+    ═══════════════════════════════════════════════════════════════ */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .team-member {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 16px 14px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      backdrop-filter: blur(12px);
+    }
+
+    .team-member:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(39, 174, 96, 0.15);
+    }
+
+    .team-avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 8px;
+      font-size: 0.8em;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .team-member h4 {
+      font-size: 0.78em;
+      margin: 0 0 2px;
+      color: var(--text-primary);
+    }
+
+    .team-member p {
+      font-size: 0.62em;
+      margin: 0;
+      color: var(--text-muted);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       CARDS & STAT BLOCKS
+    ═══════════════════════════════════════════════════════════════ */
+    .glass-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 28px 24px;
+      backdrop-filter: blur(16px);
+      transition: transform 0.3s;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .stat-row {
+      display: flex;
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .stat-block {
+      flex: 1;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 20px 18px;
+      text-align: center;
+      backdrop-filter: blur(12px);
+    }
+
+    .stat-block .stat-val {
+      font-size: 2.2em;
+      font-weight: 800;
+      color: var(--accent-green);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .stat-block .stat-label {
+      font-size: 0.72em;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       LISTS — STYLED
+    ═══════════════════════════════════════════════════════════════ */
+    .styled-list {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0;
+    }
+
+    .styled-list li {
+      padding: 10px 0 10px 28px;
+      position: relative;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      font-size: 0.92em;
+    }
+
+    .styled-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-green);
+      box-shadow: 0 0 8px var(--glow-green);
+    }
+
+    /* Numbered list variant */
+    .numbered-list {
+      counter-reset: slide-counter;
+      list-style: none;
+      padding: 0;
+    }
+
+    .numbered-list li {
+      counter-increment: slide-counter;
+      padding: 8px 0 8px 44px;
+      position: relative;
+      font-size: 0.88em;
+      color: var(--text-secondary);
+    }
+
+    .numbered-list li::before {
+      content: counter(slide-counter, decimal-leading-zero);
+      position: absolute;
+      left: 0;
+      font-family: var(--font-mono);
+      font-size: 0.78em;
+      font-weight: 600;
+      color: var(--accent-cyan);
+      background: rgba(56, 189, 248, 0.1);
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       ARCHITECTURE / PIPELINE DIAGRAM
+    ═══════════════════════════════════════════════════════════════ */
+    .pipeline-flow {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    .pipeline-node {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 14px 16px;
+      text-align: center;
+      min-width: 120px;
+      transition: all 0.3s;
+    }
+
+    .pipeline-node:hover {
+      border-color: var(--accent-green);
+      box-shadow: 0 0 20px var(--glow-green);
+    }
+
+    .pipeline-node .node-icon {
+      font-size: 1.6em;
+      margin-bottom: 6px;
+    }
+
+    .pipeline-node h4 {
+      font-size: 0.72em;
+      margin: 0 0 2px;
+      color: var(--text-primary);
+    }
+
+    .pipeline-node p {
+      font-size: 0.58em;
+      margin: 0;
+      color: var(--text-muted);
+    }
+
+    .pipeline-arrow {
+      color: var(--accent-green);
+      font-size: 1.3em;
+      font-weight: 700;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       MATRIX VISUALIZATION
+    ═══════════════════════════════════════════════════════════════ */
+    .matrix-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 50px);
+      gap: 6px;
+      margin: 16px 0;
+    }
+
+    .matrix-cell {
+      width: 50px;
+      height: 50px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-size: 0.85em;
+      font-weight: 700;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .matrix-cell:hover {
+      transform: scale(1.15) translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       CHART CONTAINER
+    ═══════════════════════════════════════════════════════════════ */
+    .chart-container {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 20px;
+      backdrop-filter: blur(12px);
+    }
+
+    .chart-container canvas {
+      max-height: 320px;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       TIMELINE
+    ═══════════════════════════════════════════════════════════════ */
+    .timeline {
+      display: flex;
+      gap: 8px;
+      margin-top: 16px;
+      overflow-x: auto;
+    }
+
+    .timeline-item {
+      flex: 1;
+      min-width: 110px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 14px 12px;
+      text-align: center;
+      position: relative;
+      transition: all 0.3s;
+    }
+
+    .timeline-item:hover {
+      border-color: var(--accent-green);
+      transform: translateY(-4px);
+    }
+
+    .timeline-item::after {
+      content: '→';
+      position: absolute;
+      right: -12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--accent-green);
+      font-size: 1em;
+      font-weight: 700;
+    }
+
+    .timeline-item:last-child::after { display: none; }
+
+    .timeline-item .sprint-badge {
+      font-family: var(--font-mono);
+      font-size: 0.62em;
+      font-weight: 600;
+      color: var(--accent-cyan);
+      background: rgba(56, 189, 248, 0.1);
+      padding: 3px 10px;
+      border-radius: 6px;
+      display: inline-block;
+      margin-bottom: 6px;
+    }
+
+    .timeline-item h4 {
+      font-size: 0.68em;
+      margin: 4px 0 2px;
+    }
+
+    .timeline-item p {
+      font-size: 0.55em;
+      margin: 0;
+      color: var(--text-muted);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       CONTRIBUTION HIGHLIGHTS
+    ═══════════════════════════════════════════════════════════════ */
+    .contrib-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .contrib-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 20px;
+      backdrop-filter: blur(12px);
+      transition: all 0.3s;
+    }
+
+    .contrib-card:hover {
+      border-color: var(--accent-green);
+      box-shadow: 0 8px 32px rgba(39, 174, 96, 0.12);
+    }
+
+    .contrib-card .contrib-num {
+      font-family: var(--font-mono);
+      font-size: 0.7em;
+      color: var(--accent-cyan);
+      margin-bottom: 6px;
+    }
+
+    .contrib-card h4 {
+      font-size: 0.88em;
+      margin: 0 0 6px;
+    }
+
+    .contrib-card p {
+      font-size: 0.72em;
+      margin: 0;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       CUSTOM SLIDE BACKGROUNDS
+    ═══════════════════════════════════════════════════════════════ */
+    .slide-glow-tl::before {
+      content: '';
+      position: absolute;
+      top: -150px;
+      left: -150px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(39, 174, 96, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .slide-glow-br::after {
+      content: '';
+      position: absolute;
+      bottom: -150px;
+      right: -150px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       REVEAL FRAGMENT ANIMATIONS
+    ═══════════════════════════════════════════════════════════════ */
+    .reveal .slides section .fragment.custom-fade {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .reveal .slides section .fragment.custom-fade.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       OBJECTIVE GRID
+    ═══════════════════════════════════════════════════════════════ */
+    .objective-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .objective-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 18px 20px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      backdrop-filter: blur(12px);
+      transition: all 0.3s;
+    }
+
+    .objective-card:hover {
+      border-color: var(--accent-green);
+      transform: translateY(-2px);
+    }
+
+    .objective-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2em;
+      flex-shrink: 0;
+      background: rgba(39, 174, 96, 0.1);
+      border: 1px solid rgba(39, 174, 96, 0.2);
+    }
+
+    .objective-card h4 {
+      font-size: 0.82em;
+      margin: 0 0 4px;
+    }
+
+    .objective-card p {
+      font-size: 0.68em;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       CONCLUSION / FUTURE
+    ═══════════════════════════════════════════════════════════════ */
+    .conclusion-points {
+      display: flex;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .conclusion-col {
+      flex: 1;
+    }
+
+    .conclusion-col h3 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .conclusion-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1em;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       SLIDE FOOTER
+    ═══════════════════════════════════════════════════════════════ */
+    .slide-footer {
+      position: absolute;
+      bottom: 14px;
+      left: 60px;
+      right: 60px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.55em;
+      color: var(--text-muted);
+      border-top: 1px solid rgba(255, 255, 255, 0.04);
+      padding-top: 8px;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════════════════════════════ */
+    @media (max-width: 900px) {
+      .team-grid { grid-template-columns: repeat(3, 1fr); }
+      .contrib-grid { grid-template-columns: repeat(2, 1fr); }
+      .objective-grid { grid-template-columns: 1fr; }
+      .flex-row { flex-direction: column; }
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       PROGRESS BAR OVERRIDE
+    ═══════════════════════════════════════════════════════════════ */
+    .reveal .progress {
+      background: rgba(255, 255, 255, 0.04);
+      height: 4px;
+    }
+
+    .reveal .progress span {
+      background: linear-gradient(90deg, var(--accent-green), var(--accent-cyan));
+    }
+
+    /* PAGE NUMBER OVERRIDE */
+    .reveal .slide-number {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      color: var(--text-muted);
+      background: transparent;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="particles-canvas"></canvas>
+
+<div class="reveal">
+  <div class="slides">
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SLIDE 1: COVER
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="cover-slide" data-background-color="#060B14">
+      <div class="logo-ring">
+        <svg viewBox="0 0 36 36" fill="none">
+          <circle cx="18" cy="18" r="16" stroke="#27AE60" stroke-width="2.5" fill="none"/>
+          <circle cx="18" cy="18" r="7" fill="#27AE60"/>
+          <circle cx="18" cy="18" r="3" fill="#060B14"/>
+          <path d="M2 18C2 18 8 8 18 8C28 8 34 18 34 18C34 18 28 28 18 28C8 28 2 18 2 18Z" stroke="#27AE60" stroke-width="2" fill="none"/>
+        </svg>
+      </div>
+      <h1>Ally Vision</h1>
+      <p class="tagline">
+        AI-Powered Visual-to-Tactile Assistive Navigation System<br/>
+        Using Sensory Substitution for Visually Impaired Individuals
+      </p>
+      <hr class="divider" style="margin: 0 auto 20px;" />
+      <div class="cover-meta">
+        <span style="color: var(--accent-green); font-weight: 600;">Egyptian-Chinese University (ECU)</span>
+        <span>Faculty of Engineering & Technology — Mechatronics Department</span>
+        <span style="margin-top: 8px;">Supervised by: <strong style="color: var(--accent-cyan);">Dr. Islam Mohamed</strong></span>
+        <span style="color: var(--text-muted); font-size: 0.9em; margin-top: 6px;">Academic Year 2025 – 2026</span>
+      </div>
+      <div class="cover-bottom-bar">
+        <span>🌐 allyvision.org</span>
+        <span>📧 contact@allyvision.org</span>
+        <span>📍 Cairo, Egypt</span>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SLIDE 2: TEAM MEMBERS
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="slide-glow-tl slide-glow-br" data-background-color="#060B14">
+      <span class="badge">Graduation Team</span>
+      <h2>Meet the <span class="accent">Minds</span> Behind Ally Vision</h2>
+      <p>An ambitious 11-engineer team collaborating across hardware, AI, embedded systems, and haptics.</p>
+
+      <div class="team-grid">
+        <div class="team-member fragment" data-fragment-index="0">
+          <div class="team-avatar" style="background: linear-gradient(135deg, #0284C7, #38BDF8);">FT</div>
+          <h4>Farah Tamer</h4>
+        </div>
+        <div class="team-member fragment" data-fragment-index="0">
+          <div class="team-avatar" style="background: linear-gradient(135deg, #16A34A, #4ADE80);">TM</div>
+          <h4>Taha Mohamed</h4>
+        </div>
+        <div class="team-member fragment" data-fragment-index="0">
+          <div class="team-avatar" style="background: linear-gradient(135deg, #7C3AED, #A78BFA);">MM</div>
+          <h4>Mostafa Mohamed</h4>
+        </div>
+        <div class="team-member fragment" data-fragment-index="0">
+          <div class="team-avatar" style="background: linear-gradient(135deg, #EA580C, #FB923C);">DH</div>
+          <h4>David Hany</h4>
+        </div>
+        <div class="team-member fragment" data-fragment-index="1">
+          <div class="team-avatar" style="background: linear-gradient(135deg, #0D9488, #2DD4BF);">SM</div>
+          <h4>Salma Mohamed</h4>
+        </div>
+        <div class="team-member fragment" data-fragment-index="1">
+          <div class="team-avatar" style="background: linear-gradient(135deg, #2563EB, #60A5FA);">FA</div>
+          <h4>Fathy Ahmed</h4>
+        </div>
+        <div class="team-member fragment" data-fragment-index="1">
+          <div class="team-avatar" style="background: linear-gradient(135deg, #475569, #94A3B8);">AR</div>
+          <h4>Abdallah Reda</h4>
+        </div>
+        <div class="team-member fragment" data-fragment-index="1">
+          <div class="team-avatar" style="background: linear-gradient(135deg, #DC2626, #F87171);">MM</div>
+          <h4>Mohamed Mohsen</h4>
+        </div>
+        <div class="team-member fragment" data-fragment-index="2">
+          <div class="team-avatar" style="background: linear-gradient(135deg, #1E40AF, #3B82F6);">AR</div>
+          <h4>Ahmed Ragab</h4>
+        </div>
+        <div class="team-member fragment" data-fragment-index="2">
+          <div class="team-avatar" style="background: linear-gradient(135deg, #9333EA, #C084FC);">HS</div>
+          <h4>Habiba Saad</h4>
+        </div>
+        <div class="team-member fragment" data-fragment-index="2">
+          <div class="team-avatar" style="background: linear-gradient(135deg, #059669, #34D399);">HE</div>
+          <h4>Hend Elsayed</h4>
+        </div>
+      </div>
+      <div class="slide-footer"><span>Ally Vision — ECU Graduation Project</span><span>02 / 12</span></div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SLIDE 3: OUTLINES
+    ═══════════════════════════════════════════════════════════ -->
+    <section data-background-color="#060B14">
+      <span class="badge badge-cyan">Agenda</span>
+      <h2>Presentation <span class="accent-cyan">Outline</span></h2>
+      <hr class="divider" />
+
+      <div class="flex-row">
+        <div class="flex-1">
+          <ol class="numbered-list">
+            <li><strong>Introduction</strong> — Project Overview & Context</li>
+            <li><strong>Motivations</strong> — Why Ally Vision Exists</li>
+            <li><strong>Problem Statement</strong> — The Challenge</li>
+            <li><strong>Contribution</strong> — What We Bring</li>
+            <li><strong>Objectives</strong> — Our Goals</li>
+            <li><strong>Proposed System</strong> — Architecture & Design</li>
+          </ol>
+        </div>
+        <div class="flex-1">
+          <ol class="numbered-list" start="7">
+            <li><strong>Parametric Study</strong> — Benchmarks & Analysis</li>
+            <li><strong>Results</strong> — Performance Metrics</li>
+            <li><strong>Conclusion</strong> — Key Findings</li>
+            <li><strong>Future Work</strong> — Next Steps</li>
+            <li><strong>Time Plan</strong> — Sprint Execution Roadmap</li>
+            <li><strong>Q & A</strong> — Open Discussion</li>
+          </ol>
+        </div>
+      </div>
+      <div class="slide-footer"><span>Ally Vision — ECU Graduation Project</span><span>03 / 12</span></div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SLIDE 4: INTRODUCTION
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="slide-glow-tl" data-background-color="#060B14">
+      <span class="badge">Introduction</span>
+      <h2>See Beyond <span class="accent">Sight</span></h2>
+      <hr class="divider" />
+
+      <p>
+        <strong>Ally Vision</strong> is a wearable assistive navigation system that converts
+        real-time 3D spatial data into tactile feedback on the user's forehead using a
+        <strong>5×5 dynamic pin-matrix</strong>, enabling visually impaired individuals to
+        perceive obstacles without sight or sound.
+      </p>
+
+      <div class="stat-row fragment">
+        <div class="stat-block">
+          <div class="stat-val">285M+</div>
+          <p class="stat-label">Visually Impaired Worldwide</p>
+        </div>
+        <div class="stat-block">
+          <div class="stat-val" style="color: var(--accent-cyan);">43M</div>
+          <p class="stat-label">Completely Blind</p>
+        </div>
+        <div class="stat-block">
+          <div class="stat-val" style="color: var(--accent-orange);">90%</div>
+          <p class="stat-label">In Developing Countries</p>
+        </div>
+        <div class="stat-block">
+          <div class="stat-val" style="color: var(--accent-purple);">70%</div>
+          <p class="stat-label">Face Mobility Challenges</p>
+        </div>
+      </div>
+
+      <p class="fragment" style="margin-top: 14px; font-size: 0.82em; color: var(--text-muted);">
+        Built on principles of <strong>Sensory Substitution</strong> and <strong>Neuroplasticity</strong> — the brain's ability to rewire sensory pathways.
+        Inspired by the 7Sense SuperBrain 1 clinical architecture.
+      </p>
+      <div class="slide-footer"><span>Ally Vision — ECU Graduation Project</span><span>04 / 12</span></div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SLIDE 5: MOTIVATIONS
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="slide-glow-br" data-background-color="#060B14">
+      <span class="badge badge-purple">Motivations</span>
+      <h2>Why <span class="accent-purple">Ally Vision</span> Exists</h2>
+      <hr class="divider" />
+
+      <div class="flex-row">
+        <div class="flex-1">
+          <ul class="styled-list">
+            <li class="fragment"><strong>White canes</strong> detect only ground-level obstacles — missing overhead hazards, moving objects, and spatial context</li>
+            <li class="fragment"><strong>Audio-based systems</strong> block environmental sound cues critical for safe navigation (traffic, voices, alerts)</li>
+            <li class="fragment"><strong>Existing haptic devices</strong> are expensive ($2,000–$5,000+), bulky, and require extensive training</li>
+            <li class="fragment"><strong>No existing product</strong> provides real-time 3D spatial mapping translated into intuitive tactile relief on the skin</li>
+          </ul>
+        </div>
+        <div class="flex-1 fragment">
+          <div class="glass-card" style="border-color: rgba(168, 85, 247, 0.2);">
+            <h4 style="color: var(--accent-purple); margin: 0 0 10px;">🧠 Core Insight</h4>
+            <p style="font-size: 0.82em;">
+              The forehead is clinically proven as the <strong>optimal zone for tactile perception</strong>
+              — the brain rapidly learns to interpret spatial height-maps pressed against it, achieving
+              obstacle recognition within minutes through neuroplasticity.
+            </p>
+            <p style="font-size: 0.72em; margin-top: 10px; color: var(--text-muted);">
+              — Bach-y-Rita & Kercel, "Sensory Substitution and the Plastic Brain", Trends in Cognitive Sciences
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer"><span>Ally Vision — ECU Graduation Project</span><span>05 / 12</span></div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SLIDE 6: PROBLEM STATEMENT
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="slide-glow-tl" data-background-color="#060B14">
+      <span class="badge" style="background: rgba(239, 68, 68, 0.12); color: var(--accent-red); border-color: rgba(239, 68, 68, 0.25);">Problem Statement</span>
+      <h2>The Challenge We Set Out to <span class="accent-red">Solve</span></h2>
+      <hr class="divider" />
+
+      <div class="glass-card fragment" style="border-color: rgba(239, 68, 68, 0.15); margin-bottom: 20px;">
+        <p style="font-size: 1em; color: var(--text-primary); margin: 0; line-height: 1.8;">
+          Millions of visually impaired individuals <strong>cannot safely navigate</strong> unfamiliar environments.
+          Traditional aids detect only ground-level obstacles. Modern assistive technologies remain
+          <strong>expensive, bulky, and audio-reliant</strong> — blocking the critical environmental sounds
+          that blind users depend on for survival.
+        </p>
+      </div>
+
+      <div class="flex-row fragment">
+        <div class="glass-card flex-1" style="text-align: center;">
+          <div style="font-size: 2em; margin-bottom: 8px;">🦯</div>
+          <h4 style="font-size: 0.82em;">White Cane</h4>
+          <p style="font-size: 0.7em;">Ground-level only. No overhead detection. No spatial context. ~1m range.</p>
+        </div>
+        <div class="glass-card flex-1" style="text-align: center;">
+          <div style="font-size: 2em; margin-bottom: 8px;">🔊</div>
+          <h4 style="font-size: 0.82em;">Audio-Based Systems</h4>
+          <p style="font-size: 0.7em;">Blocks environmental sounds. Cognitive overload. Not intuitive for spatial mapping.</p>
+        </div>
+        <div class="glass-card flex-1" style="text-align: center; border-color: rgba(39, 174, 96, 0.3);">
+          <div style="font-size: 2em; margin-bottom: 8px;">✋</div>
+          <h4 style="font-size: 0.82em; color: var(--accent-green);">Ally Vision (Ours)</h4>
+          <p style="font-size: 0.7em;">Real-time 3D depth. Silent tactile feedback. Affordable. 6m range. <strong style="color: var(--accent-green);">No audio blocking.</strong></p>
+        </div>
+      </div>
+      <div class="slide-footer"><span>Ally Vision — ECU Graduation Project</span><span>06 / 12</span></div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SLIDE 7: CONTRIBUTION
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="slide-glow-br" data-background-color="#060B14">
+      <span class="badge">Key Contributions</span>
+      <h2>What We <span class="accent">Bring</span></h2>
+      <hr class="divider" />
+
+      <div class="contrib-grid">
+        <div class="contrib-card fragment">
+          <div class="contrib-num">01</div>
+          <h4>Bio-Inspired 7-Stage Architecture</h4>
+          <p>A complete sensory substitution pipeline modeled after the human visual system: Eye → Visual Cortex → Nervous System → Muscle & Skin.</p>
+        </div>
+        <div class="contrib-card fragment">
+          <div class="contrib-num">02</div>
+          <h4>5×5 Dynamic Tactile Pin-Matrix</h4>
+          <p>25 independent micro linear stepper motors with TMC2209 silent drivers delivering sub-millimeter, whisper-quiet pin displacement on the forehead.</p>
+        </div>
+        <div class="contrib-card fragment">
+          <div class="contrib-num">03</div>
+          <h4>Real-Time AI Spatial Fusion</h4>
+          <p>YOLOv8n object detection + RGB-D depth fusion + RANSAC floor segmentation + ByteTrack multi-object tracking running at ≥20 FPS on edge hardware.</p>
+        </div>
+        <div class="contrib-card fragment">
+          <div class="contrib-num">04</div>
+          <h4>Safe Path Corridor Planning</h4>
+          <p>3-sector walkable clearance analysis with 80cm human corridor envelope and automatic steering angle θ computation for dynamic path guidance.</p>
+        </div>
+        <div class="contrib-card fragment">
+          <div class="contrib-num">05</div>
+          <h4>"Abstract to Enhance" Philosophy</h4>
+          <p>Converting high-density 3D point clouds into a low-cognitive-load 5×5 height matrix — preventing sensory fatigue while maximizing spatial awareness.</p>
+        </div>
+        <div class="contrib-card fragment">
+          <div class="contrib-num">06</div>
+          <h4>Systematic Literature Review</h4>
+          <p>PRISMA-compliant SLR: 3,104 papers identified → 137 included across tactile feedback, sensory substitution, and navigation for VI from Scopus & WoS.</p>
+        </div>
+      </div>
+      <div class="slide-footer"><span>Ally Vision — ECU Graduation Project</span><span>07 / 12</span></div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SLIDE 8: OBJECTIVES
+    ═══════════════════════════════════════════════════════════ -->
+    <section data-background-color="#060B14">
+      <span class="badge badge-cyan">Objectives</span>
+      <h2>Our <span class="accent-cyan">Goals</span></h2>
+      <hr class="divider" />
+
+      <div class="objective-grid">
+        <div class="objective-card fragment">
+          <div class="objective-icon">📸</div>
+          <div>
+            <h4>Real-Time 3D Perception</h4>
+            <p>Achieve live RGB-D depth fusion with (X, Y, Z) metric coordinates at ≥20 FPS using edge AI with YOLOv8n ONNX.</p>
+          </div>
+        </div>
+        <div class="objective-card fragment">
+          <div class="objective-icon">🛡️</div>
+          <div>
+            <h4>Safe Path Navigation</h4>
+            <p>Detect walkable corridors (80cm width, 3m depth) using RANSAC ground plane extraction and 3-sector clearance analysis.</p>
+          </div>
+        </div>
+        <div class="objective-card fragment">
+          <div class="objective-icon">🧠</div>
+          <div>
+            <h4>Hazard Priority Scoring</h4>
+            <p>Multi-factor scoring: proximity weight (0.40), velocity (0.25), class severity (0.15), and path collision (0.20).</p>
+          </div>
+        </div>
+        <div class="objective-card fragment">
+          <div class="objective-icon">✋</div>
+          <div>
+            <h4>Tactile Pin-Matrix Encoding</h4>
+            <p>Map 3D obstacle depth to 0–5 physical pin height levels on a 5×5 matrix covering ±1.5m lateral, 0.5–5.0m forward.</p>
+          </div>
+        </div>
+        <div class="objective-card fragment">
+          <div class="objective-icon">⚡</div>
+          <div>
+            <h4>Sub-100ms End-to-End Latency</h4>
+            <p>Total pipeline from camera capture → AI processing → serial transmission → motor actuation under 100 milliseconds.</p>
+          </div>
+        </div>
+        <div class="objective-card fragment">
+          <div class="objective-icon">🧪</div>
+          <div>
+            <h4>Human Subject Validation</h4>
+            <p>5 blindfolded obstacle course trials comparing White Cane Only vs. White Cane + Ally Vision across transit time and collision count.</p>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer"><span>Ally Vision — ECU Graduation Project</span><span>08 / 12</span></div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SLIDE 9: PROPOSED SYSTEM ARCHITECTURE
+    ═══════════════════════════════════════════════════════════ -->
+    <section data-background-color="#060B14">
+      <span class="badge">Proposed System</span>
+      <h2>End-to-End <span class="accent">Architecture</span></h2>
+      <hr class="divider" />
+
+      <div class="pipeline-flow fragment">
+        <div class="pipeline-node">
+          <div class="node-icon">📷</div>
+          <h4>RGB-D Camera</h4>
+          <p>Orbbec Gemini 2</p>
+        </div>
+        <span class="pipeline-arrow">→</span>
+        <div class="pipeline-node">
+          <div class="node-icon">🔍</div>
+          <h4>Preprocessing</h4>
+          <p>Bilateral Filter</p>
+        </div>
+        <span class="pipeline-arrow">→</span>
+        <div class="pipeline-node" style="border-color: rgba(168, 85, 247, 0.3);">
+          <div class="node-icon">🤖</div>
+          <h4>YOLOv8n ONNX</h4>
+          <p>Object Detection</p>
+        </div>
+        <span class="pipeline-arrow">→</span>
+        <div class="pipeline-node">
+          <div class="node-icon">📐</div>
+          <h4>3D Pinhole</h4>
+          <p>X, Y, Z Projection</p>
+        </div>
+        <span class="pipeline-arrow">→</span>
+        <div class="pipeline-node" style="border-color: rgba(245, 158, 11, 0.3);">
+          <div class="node-icon">🛤️</div>
+          <h4>RANSAC + Corridor</h4>
+          <p>Safe Path Planning</p>
+        </div>
+        <span class="pipeline-arrow">→</span>
+        <div class="pipeline-node" style="border-color: rgba(39, 174, 96, 0.3);">
+          <div class="node-icon">✋</div>
+          <h4>5×5 Matrix</h4>
+          <p>Tactile Encoding</p>
+        </div>
+        <span class="pipeline-arrow">→</span>
+        <div class="pipeline-node">
+          <div class="node-icon">⚙️</div>
+          <h4>Arduino R4</h4>
+          <p>Motor Control</p>
+        </div>
+      </div>
+
+      <!-- Interactive 5x5 Matrix Visualization -->
+      <div class="flex-row fragment" style="margin-top: 16px;">
+        <div class="flex-1">
+          <h4 style="font-size: 0.88em;">5×5 Tactile Height Matrix</h4>
+          <p style="font-size: 0.72em;">Obstacle proximity mapped to pin displacement levels (0 = flush, 5 = peak hazard)</p>
+          <div class="matrix-grid" id="live-matrix">
+            <!-- Populated by JS -->
+          </div>
+          <p style="font-size: 0.6em; color: var(--text-muted); margin-top: 6px;">Row 1 = Far (5m) → Row 5 = Near (0.5m) &nbsp;|&nbsp; Col 1 = Left → Col 5 = Right</p>
+        </div>
+        <div class="flex-1">
+          <div class="glass-card">
+            <h4 style="font-size: 0.82em; margin: 0 0 10px;">Pin Height Transfer Function</h4>
+            <ul class="styled-list" style="font-size: 0.72em;">
+              <li><strong>Level 0:</strong> Flush — Clear walkable space</li>
+              <li><strong>Level 1–2:</strong> Distant obstacle (3.0 – 5.0m)</li>
+              <li><strong>Level 3–4:</strong> Intermediate hazard (1.5 – 3.0m)</li>
+              <li><strong>Level 5:</strong> Critical danger (&lt; 1.2m)</li>
+            </ul>
+            <div style="margin-top: 10px; padding: 10px; background: rgba(39, 174, 96, 0.08); border-radius: 8px; border: 1px solid rgba(39, 174, 96, 0.15);">
+              <p style="font-size: 0.7em; margin: 0; color: var(--accent-green);">
+                🎯 Center column (Col 3) = User's forward walking path — kept flush unless direct obstruction detected.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer"><span>Ally Vision — ECU Graduation Project</span><span>09 / 12</span></div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SLIDE 10: PARAMETRIC STUDY + RESULTS
+    ═══════════════════════════════════════════════════════════ -->
+    <section data-background-color="#060B14">
+      <span class="badge badge-cyan">Parametric Study & Results</span>
+      <h2>Performance <span class="accent-cyan">Benchmarks</span></h2>
+      <hr class="divider" />
+
+      <div class="flex-row">
+        <div class="flex-1 chart-container fragment">
+          <h4 style="font-size: 0.82em; margin: 0 0 14px;">YOLOv8n Detection Performance (mAP@50)</h4>
+          <canvas id="chart-mAP"></canvas>
+        </div>
+        <div class="flex-1 chart-container fragment">
+          <h4 style="font-size: 0.82em; margin: 0 0 14px;">End-to-End Pipeline Latency (ms)</h4>
+          <canvas id="chart-latency"></canvas>
+        </div>
+      </div>
+
+      <div class="stat-row fragment" style="margin-top: 16px;">
+        <div class="stat-block">
+          <div class="stat-val">87.3%</div>
+          <p class="stat-label">mAP@50 (8 Classes)</p>
+        </div>
+        <div class="stat-block">
+          <div class="stat-val" style="color: var(--accent-cyan);">24</div>
+          <p class="stat-label">FPS Real-Time</p>
+        </div>
+        <div class="stat-block">
+          <div class="stat-val" style="color: var(--accent-orange);">78ms</div>
+          <p class="stat-label">Total Pipeline Latency</p>
+        </div>
+        <div class="stat-block">
+          <div class="stat-val" style="color: var(--accent-purple);">±5cm</div>
+          <p class="stat-label">Depth Accuracy (1–3m)</p>
+        </div>
+        <div class="stat-block">
+          <div class="stat-val" style="color: var(--accent-red);">9/10</div>
+          <p class="stat-label">Corridor Tests Passed</p>
+        </div>
+      </div>
+      <div class="slide-footer"><span>Ally Vision — ECU Graduation Project</span><span>10 / 12</span></div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SLIDE 11: CONCLUSION & FUTURE WORK
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="slide-glow-tl slide-glow-br" data-background-color="#060B14">
+      <span class="badge">Conclusion & Future Work</span>
+      <h2>Key Findings & <span class="accent">Next Steps</span></h2>
+      <hr class="divider" />
+
+      <div class="conclusion-points">
+        <div class="conclusion-col fragment">
+          <h3>
+            <span class="conclusion-icon" style="background: rgba(39, 174, 96, 0.12); color: var(--accent-green);">✓</span>
+            Conclusions
+          </h3>
+          <ul class="styled-list" style="font-size: 0.82em;">
+            <li>Successfully built end-to-end sensory substitution pipeline: <strong>Camera → AI → Tactile Matrix → Forehead</strong></li>
+            <li>Achieved <strong>87.3% mAP@50</strong> across 8 navigation-critical obstacle classes with YOLOv8n ONNX</li>
+            <li>Pipeline latency <strong>&lt; 100ms</strong> validated — meeting real-time assistive device requirements</li>
+            <li>Safe corridor planning with 3-sector analysis achieves <strong>90% accuracy</strong> on indoor test courses</li>
+            <li>5×5 tactile matrix successfully conveys 3D spatial depth through physical pin displacement</li>
+            <li>Comprehensive SLR of <strong>137 papers</strong> validated the approach against the state-of-the-art</li>
+          </ul>
+        </div>
+        <div class="conclusion-col fragment">
+          <h3>
+            <span class="conclusion-icon" style="background: rgba(56, 189, 248, 0.12); color: var(--accent-cyan);">🚀</span>
+            Future Work
+          </h3>
+          <ul class="styled-list" style="font-size: 0.82em;">
+            <li><strong>Outdoor GPS Integration:</strong> Combine with GPS waypoint navigation for outdoor route guidance</li>
+            <li><strong>Larger Tactile Matrix:</strong> Scale from 5×5 to 7×13 pins for higher spatial resolution</li>
+            <li><strong>Voice Command Layer:</strong> Add optional voice assistant for landmark identification and navigation instructions</li>
+            <li><strong>Battery-Powered Wireless:</strong> Replace USB serial with BLE 5.0 for fully portable untethered operation</li>
+            <li><strong>Extensive User Studies:</strong> Conduct IRB-approved studies with 50+ visually impaired participants</li>
+            <li><strong>Miniaturization:</strong> Custom PCB and housing for commercial-grade wearable form factor</li>
+          </ul>
+        </div>
+      </div>
+      <div class="slide-footer"><span>Ally Vision — ECU Graduation Project</span><span>11 / 12</span></div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SLIDE 12: TIME PLAN
+    ═══════════════════════════════════════════════════════════ -->
+    <section data-background-color="#060B14">
+      <span class="badge badge-purple">Time Plan</span>
+      <h2>7-Sprint Agile <span class="accent-purple">Execution Roadmap</span></h2>
+      <hr class="divider" />
+
+      <div class="timeline fragment">
+        <div class="timeline-item">
+          <span class="sprint-badge">S1 • W1-2</span>
+          <h4>Setup & Contracts</h4>
+          <p>Monorepo, camera, dataset, config.yaml, contracts.py</p>
+        </div>
+        <div class="timeline-item">
+          <span class="sprint-badge">S2 • W3-4</span>
+          <h4>Engine Prototypes</h4>
+          <p>YOLOv8n training, RANSAC, Pygame simulator, ONNX export</p>
+        </div>
+        <div class="timeline-item">
+          <span class="sprint-badge">S3 • W5-6</span>
+          <h4>Perception Milestone</h4>
+          <p>Live 3D detection at ≥20 FPS, threaded pipeline</p>
+        </div>
+        <div class="timeline-item">
+          <span class="sprint-badge">S4 • W7-8</span>
+          <h4>Spatial Intelligence</h4>
+          <p>ByteTrack, corridor planner, hazard scoring</p>
+        </div>
+        <div class="timeline-item">
+          <span class="sprint-badge">S5 • W9-10</span>
+          <h4>Tactile Engine</h4>
+          <p>5×5 matrix mapping, split-screen simulator</p>
+        </div>
+        <div class="timeline-item">
+          <span class="sprint-badge">S6 • W11-12</span>
+          <h4>Hardware Loop</h4>
+          <p>Serial link, Arduino R4, motor latency &lt;100ms</p>
+        </div>
+        <div class="timeline-item" style="border-color: rgba(39, 174, 96, 0.4);">
+          <span class="sprint-badge" style="background: rgba(39, 174, 96, 0.15); color: var(--accent-green);">S7 • W13-14</span>
+          <h4 style="color: var(--accent-green);">Field Trials & Thesis</h4>
+          <p>5 blindfolded trials, thesis, demo video</p>
+        </div>
+      </div>
+
+      <div class="flex-row fragment" style="margin-top: 20px;">
+        <div class="glass-card flex-1" style="text-align: center;">
+          <h4 style="font-size: 0.82em; margin: 0 0 6px;">Team Tracks</h4>
+          <p style="font-size: 0.7em; margin: 0;">6 AI engineers working in parallel across modular tracks with gate-based milestone reviews</p>
+        </div>
+        <div class="glass-card flex-1" style="text-align: center; border-color: rgba(39, 174, 96, 0.2);">
+          <h4 style="font-size: 0.82em; margin: 0 0 6px; color: var(--accent-green);">Methodology</h4>
+          <p style="font-size: 0.7em; margin: 0;">Agile Scrum with 2-week sprints, Jira tracking, GitHub monorepo, and weekly standup meetings</p>
+        </div>
+        <div class="glass-card flex-1" style="text-align: center;">
+          <h4 style="font-size: 0.82em; margin: 0 0 6px;">Quality Gates</h4>
+          <p style="font-size: 0.7em; margin: 0;">Each sprint has acceptance criteria: mAP ≥ 85%, FPS ≥ 20, latency < 100ms, 9/10 corridor tests</p>
+        </div>
+      </div>
+      <div class="slide-footer"><span>Ally Vision — ECU Graduation Project</span><span>12 / 12</span></div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+         BONUS SLIDE: THANK YOU / Q&A
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="cover-slide" data-background-color="#060B14">
+      <div class="logo-ring">
+        <svg viewBox="0 0 36 36" fill="none">
+          <circle cx="18" cy="18" r="16" stroke="#27AE60" stroke-width="2.5" fill="none"/>
+          <circle cx="18" cy="18" r="7" fill="#27AE60"/>
+          <circle cx="18" cy="18" r="3" fill="#060B14"/>
+          <path d="M2 18C2 18 8 8 18 8C28 8 34 18 34 18C34 18 28 28 18 28C8 28 2 18 2 18Z" stroke="#27AE60" stroke-width="2" fill="none"/>
+        </svg>
+      </div>
+      <h1 style="font-size: 2.8em;">Thank You</h1>
+      <p class="tagline">
+        Questions, Feedback & Discussion
+      </p>
+      <hr class="divider" style="margin: 0 auto 24px;" />
+      <div class="cover-meta">
+        <span>🌐 <strong>allyvision.org</strong></span>
+        <span>📧 contact@allyvision.org</span>
+        <span style="margin-top: 8px; color: var(--accent-green);">See Beyond Sight.</span>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SCRIPTS
+═══════════════════════════════════════════════════════════════ -->
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+
+<script>
+  // ───────────────────────────────────────────────────────────────
+  //  1. PARTICLE CANVAS BACKGROUND
+  // ───────────────────────────────────────────────────────────────
+  (function() {
+    const canvas = document.getElementById('particles-canvas');
+    const ctx = canvas.getContext('2d');
+    let W, H;
+    const particles = [];
+    const PARTICLE_COUNT = 70;
+    const CONNECTION_DIST = 160;
+
+    function resize() {
+      W = canvas.width = window.innerWidth;
+      H = canvas.height = window.innerHeight;
+    }
+
+    function createParticle() {
+      return {
+        x: Math.random() * W,
+        y: Math.random() * H,
+        vx: (Math.random() - 0.5) * 0.4,
+        vy: (Math.random() - 0.5) * 0.4,
+        r: Math.random() * 2 + 0.5,
+        opacity: Math.random() * 0.4 + 0.1,
+      };
+    }
+
+    function init() {
+      resize();
+      for (let i = 0; i < PARTICLE_COUNT; i++) particles.push(createParticle());
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, W, H);
+
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        if (p.x < 0 || p.x > W) p.vx *= -1;
+        if (p.y < 0 || p.y > H) p.vy *= -1;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(39, 174, 96, ${p.opacity})`;
+        ctx.fill();
+
+        for (let j = i + 1; j < particles.length; j++) {
+          const q = particles[j];
+          const dx = p.x - q.x;
+          const dy = p.y - q.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < CONNECTION_DIST) {
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(q.x, q.y);
+            ctx.strokeStyle = `rgba(56, 189, 248, ${0.08 * (1 - dist / CONNECTION_DIST)})`;
+            ctx.lineWidth = 0.6;
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(animate);
+    }
+
+    window.addEventListener('resize', resize);
+    init();
+    animate();
+  })();
+
+
+  // ───────────────────────────────────────────────────────────────
+  //  2. REVEAL.JS INITIALIZATION
+  // ───────────────────────────────────────────────────────────────
+  Reveal.initialize({
+    hash: true,
+    slideNumber: 'c/t',
+    progress: true,
+    center: false,
+    transition: 'slide',
+    transitionSpeed: 'default',
+    backgroundTransition: 'fade',
+    width: 1280,
+    height: 720,
+    margin: 0,
+    pdfSeparateFragments: false,
+  });
+
+
+  // ───────────────────────────────────────────────────────────────
+  //  3. GSAP SLIDE ENTRY ANIMATIONS
+  // ───────────────────────────────────────────────────────────────
+  Reveal.on('slidechanged', (event) => {
+    const slide = event.currentSlide;
+    const elements = slide.querySelectorAll('h1, h2, h3, p, .badge, .divider, .glass-card, .stat-block, .pipeline-node, .team-member, .contrib-card, .objective-card, .timeline-item');
+
+    gsap.fromTo(
+      elements,
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.6, stagger: 0.05, ease: 'power2.out' }
+    );
+  });
+
+  // Initial slide animation
+  window.addEventListener('load', () => {
+    const first = document.querySelector('.reveal .slides section');
+    if (first) {
+      const els = first.querySelectorAll('h1, p, .divider, .badge, .logo-ring, .cover-meta, .cover-bottom-bar');
+      gsap.fromTo(
+        els,
+        { opacity: 0, y: 40, scale: 0.95 },
+        { opacity: 1, y: 0, scale: 1, duration: 0.9, stagger: 0.12, ease: 'power3.out', delay: 0.3 }
+      );
+    }
+  });
+
+
+  // ───────────────────────────────────────────────────────────────
+  //  4. INTERACTIVE 5×5 MATRIX (Slide 9)
+  // ───────────────────────────────────────────────────────────────
+  (function() {
+    const grid = [
+      [0, 0, 3, 0, 0],
+      [0, 2, 5, 2, 0],
+      [1, 4, 5, 4, 1],
+      [0, 2, 5, 2, 0],
+      [0, 0, 3, 0, 0],
+    ];
+
+    const container = document.getElementById('live-matrix');
+    if (!container) return;
+
+    grid.forEach((row) => {
+      row.forEach((val) => {
+        const cell = document.createElement('div');
+        cell.className = 'matrix-cell';
+        cell.textContent = val;
+
+        const intensity = val / 6;
+        if (val === 0) {
+          cell.style.background = 'rgba(255, 255, 255, 0.04)';
+          cell.style.color = '#475569';
+        } else {
+          cell.style.background = `rgba(34, 197, 94, ${0.15 + intensity * 0.7})`;
+          cell.style.boxShadow = `0 ${val * 2}px ${val * 4}px rgba(0,0,0,0.4), 0 0 ${val * 4}px rgba(34, 197, 94, ${val * 0.12})`;
+          cell.style.transform = `translateY(-${val * 1.5}px)`;
+        }
+
+        container.appendChild(cell);
+      });
+    });
+  })();
+
+
+  // ───────────────────────────────────────────────────────────────
+  //  5. CHART.JS — PARAMETRIC STUDY CHARTS (Slide 10)
+  // ───────────────────────────────────────────────────────────────
+  Reveal.on('slidechanged', (event) => {
+    // Only render charts when we reach the parametric slide
+    if (event.indexh === 9) { // Slide 10 (0-indexed = 9)
+      renderCharts();
+    }
+  });
+
+  let chartsRendered = false;
+  function renderCharts() {
+    if (chartsRendered) return;
+    chartsRendered = true;
+
+    const chartColors = {
+      green: 'rgba(39, 174, 96, 0.85)',
+      greenBg: 'rgba(39, 174, 96, 0.15)',
+      cyan: 'rgba(56, 189, 248, 0.85)',
+      cyanBg: 'rgba(56, 189, 248, 0.15)',
+      orange: 'rgba(245, 158, 11, 0.85)',
+      orangeBg: 'rgba(245, 158, 11, 0.15)',
+      purple: 'rgba(168, 85, 247, 0.85)',
+      purpleBg: 'rgba(168, 85, 247, 0.15)',
+      text: '#94A3B8',
+      gridLine: 'rgba(255, 255, 255, 0.06)',
+    };
+
+    Chart.defaults.color = chartColors.text;
+    Chart.defaults.font.family = "'Inter', sans-serif";
+    Chart.defaults.font.size = 11;
+
+    // Chart 1: mAP@50 per class
+    new Chart(document.getElementById('chart-mAP'), {
+      type: 'bar',
+      data: {
+        labels: ['Person', 'Chair', 'Table', 'Door', 'Stairs', 'Vehicle', 'Pole', 'Generic'],
+        datasets: [{
+          label: 'mAP@50 (%)',
+          data: [92.1, 89.4, 86.7, 84.2, 81.5, 90.8, 78.3, 85.6],
+          backgroundColor: [
+            chartColors.green, chartColors.cyan, chartColors.orange,
+            chartColors.purple, chartColors.green, chartColors.cyan,
+            chartColors.orange, chartColors.purple
+          ],
+          borderRadius: 6,
+          borderSkipped: false,
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        plugins: {
+          legend: { display: false },
+        },
+        scales: {
+          y: {
+            min: 70, max: 100,
+            grid: { color: chartColors.gridLine },
+            ticks: { callback: (v) => v + '%' }
+          },
+          x: { grid: { display: false } }
+        },
+        animation: { duration: 1500, easing: 'easeOutQuart' }
+      }
+    });
+
+    // Chart 2: Latency breakdown
+    new Chart(document.getElementById('chart-latency'), {
+      type: 'doughnut',
+      data: {
+        labels: ['Camera Capture', 'YOLO Inference', 'Depth Fusion', 'RANSAC + Corridor', 'Tactile Encoding', 'Serial TX'],
+        datasets: [{
+          data: [8, 28, 12, 15, 8, 7],
+          backgroundColor: [
+            chartColors.green, chartColors.cyan, chartColors.orange,
+            chartColors.purple, 'rgba(239, 68, 68, 0.8)', 'rgba(234, 179, 8, 0.8)'
+          ],
+          borderWidth: 2,
+          borderColor: '#060B14',
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        cutout: '55%',
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: { boxWidth: 12, padding: 10, font: { size: 10 } }
+          }
+        },
+        animation: { duration: 1500, easing: 'easeOutQuart' }
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
