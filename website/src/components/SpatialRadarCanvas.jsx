@@ -83,7 +83,7 @@ export default function SpatialRadarCanvas() {
         const originY = height * 0.45;
 
         ctx.arc(originX, originY, ring.r, 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(34, 197, 94, ${currentAlpha * 0.35})`;
+        ctx.strokeStyle = `rgba(94, 205, 217, ${currentAlpha * 0.35})`;
         ctx.lineWidth = 1;
         ctx.setLineDash([4, 6]);
         ctx.stroke();
@@ -125,8 +125,8 @@ export default function SpatialRadarCanvas() {
         // Draw particle dot
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(56, 189, 248, ${p.alpha * 0.8})`;
-        ctx.shadowColor = '#38BDF8';
+        ctx.fillStyle = `rgba(94, 205, 217, ${p.alpha * 0.8})`;
+        ctx.shadowColor = '#5ECDD9';
         ctx.shadowBlur = 8;
         ctx.fill();
         ctx.shadowBlur = 0;
@@ -143,7 +143,7 @@ export default function SpatialRadarCanvas() {
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(34, 197, 94, ${lineAlpha})`;
+            ctx.strokeStyle = `rgba(94, 205, 217, ${lineAlpha})`;
             ctx.lineWidth = 0.8;
             ctx.stroke();
           }

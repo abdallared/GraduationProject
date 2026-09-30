@@ -6,7 +6,7 @@ export default function TiltCard({
   className = '',
   maxTilt = 7,
   scale = 1.02,
-  spotlightColor = 'rgba(56, 189, 248, 0.12)',
+  spotlightColor = 'rgba(94, 205, 217, 0.10)',
   style = {},
   ...props
 }) {

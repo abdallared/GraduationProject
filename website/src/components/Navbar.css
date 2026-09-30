@@ -63,7 +63,7 @@
 }
 
 .theme-toggle:hover {
-  background: rgba(34, 197, 94, 0.14);
+  background: rgba(94, 205, 217, 0.10);
   color: var(--accent);
   border-color: var(--accent);
   transform: scale(1.08) rotate(15deg);

@@ -7,14 +7,14 @@ const teamMembers = [
   {
     name: 'Farah Tamer',
     initials: 'FT',
-    gradient: 'linear-gradient(135deg, #0284C7 0%, #38BDF8 100%)',
-    color: '#38BDF8',
+    gradient: 'linear-gradient(135deg, #3CB8C6 0%, #5ECDD9 100%)',
+    color: '#5ECDD9',
   },
   {
     name: 'Taha Mohamed',
     initials: 'TM',
-    gradient: 'linear-gradient(135deg, #16A34A 0%, #4ADE80 100%)',
-    color: '#4ADE80',
+    gradient: 'linear-gradient(135deg, #3CB8C6 0%, #7FE0E8 100%)',
+    color: '#7FE0E8',
   },
   {
     name: 'Mostafa Mohamed',

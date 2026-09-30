@@ -5,11 +5,11 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #22C55E 0%, #38BDF8 50%, #818CF8 100%);
+  background: linear-gradient(90deg, #5ECDD9 0%, #7FE0E8 50%, #D4A853 100%);
   transform-origin: left;
   z-index: 9999;
   pointer-events: none;
-  box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+  box-shadow: 0 0 10px rgba(94, 205, 217, 0.40);
   transition: transform 0.08s linear;
 }
 
@@ -21,7 +21,7 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: rgba(11, 19, 31, 0.85);
+  background: rgba(26, 26, 31, 0.88);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -39,7 +39,7 @@
 
 [data-theme="light"] .scroll-to-top-btn {
   background: rgba(255, 255, 255, 0.9);
-  border-color: rgba(15, 23, 42, 0.1);
+  border-color: rgba(26, 26, 31, 0.08);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
@@ -52,7 +52,7 @@
 .scroll-to-top-btn:hover {
   transform: translateY(-4px) scale(1.08);
   border-color: var(--accent);
-  box-shadow: 0 14px 30px rgba(34, 197, 94, 0.3);
+  box-shadow: 0 14px 30px rgba(94, 205, 217, 0.20);
 }
 
 .progress-ring {
