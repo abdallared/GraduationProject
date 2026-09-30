@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: var(--hero-overlay), url('../assets/background.jpg') center/cover no-repeat;
+  background: var(--hero-overlay), url('../assets/Gemini_Generated_Image_tv9zm6tv9zm6tv9z.jpg') center/cover no-repeat;
 }
 
 .hero-bg-shapes {
@@ -50,9 +50,19 @@
 }
 
 @keyframes float {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(30px, -30px) scale(1.05); }
-  66% { transform: translate(-20px, 20px) scale(0.95); }
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  33% {
+    transform: translate(30px, -30px) scale(1.05);
+  }
+
+  66% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
 }
 
 .hero-content {
@@ -78,13 +88,13 @@
   text-transform: uppercase;
   letter-spacing: 1.5px;
   color: var(--accent);
-  background: rgba(34, 197, 94, 0.12);
-  border: 1px solid rgba(34, 197, 94, 0.25);
+  background: rgba(94, 205, 217, 0.10);
+  border: 1px solid rgba(94, 205, 217, 0.20);
   padding: 0.5rem 1.25rem;
   border-radius: var(--radius-pill);
   margin-bottom: var(--gap-md);
   backdrop-filter: blur(12px);
-  box-shadow: 0 0 20px rgba(34, 197, 94, 0.15);
+  box-shadow: 0 0 20px rgba(94, 205, 217, 0.12);
 }
 
 .hero-badge span {
@@ -97,8 +107,17 @@
 }
 
 @keyframes pulseDot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(1.4); }
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.4;
+    transform: scale(1.4);
+  }
 }
 
 .hero h1 {
@@ -123,7 +142,7 @@
   left: 0;
   right: 0;
   height: 14px;
-  background: rgba(34, 197, 94, 0.22);
+  background: rgba(94, 205, 217, 0.18);
   border-radius: 6px;
   z-index: -1;
 }
@@ -193,19 +212,20 @@
 .hero-floating-device {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  border-radius: var(--radius-xl);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45), 0 0 40px rgba(56, 189, 248, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  object-fit: contain;
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.55));
   animation: floatDevice 6s ease-in-out infinite;
   z-index: 2;
   position: relative;
 }
 
 @keyframes floatDevice {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px) rotate(0deg);
   }
+
   50% {
     transform: translateY(-12px) rotate(0.8deg);
   }
@@ -218,7 +238,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  border: 1.5px solid rgba(34, 197, 94, 0.35);
+  border: 1.5px solid rgba(94, 205, 217, 0.30);
   pointer-events: none;
   z-index: 1;
 }
@@ -246,6 +266,7 @@
     transform: translate(-50%, -50%) scale(0.85);
     opacity: 0.8;
   }
+
   100% {
     transform: translate(-50%, -50%) scale(1.45);
     opacity: 0;
@@ -255,15 +276,24 @@
 .hero-glow {
   position: absolute;
   inset: -30px;
-  background: radial-gradient(circle, rgba(34, 197, 94, 0.2) 0%, rgba(56, 189, 248, 0.1) 45%, transparent 75%);
+  background: radial-gradient(circle, rgba(94, 205, 217, 0.15) 0%, rgba(212, 168, 83, 0.08) 45%, transparent 75%);
   border-radius: 50%;
   z-index: 1;
   animation: glowPulse 4s ease-in-out infinite;
 }
 
 @keyframes glowPulse {
-  0%, 100% { opacity: 0.6; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.08); }
+
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
 }
 
 /* HUD Chip */
@@ -275,12 +305,12 @@
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  background: rgba(11, 19, 31, 0.85);
-  border: 1px solid rgba(34, 197, 94, 0.4);
+  background: rgba(26, 26, 31, 0.88);
+  border: 1px solid rgba(94, 205, 217, 0.30);
   backdrop-filter: blur(10px);
   padding: 0.45rem 1rem;
   border-radius: var(--radius-pill);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
 
 .hud-indicator {

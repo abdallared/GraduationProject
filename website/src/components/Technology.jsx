@@ -170,11 +170,11 @@ export default function Technology() {
                         background:
                           val === 0
                             ? 'rgba(255, 255, 255, 0.04)'
-                            : `rgba(34, 197, 94, ${0.18 + (val / 6) * 0.72})`,
-                        borderColor: val > 0 ? 'rgba(34, 197, 94, 0.65)' : 'rgba(255, 255, 255, 0.08)',
+                            : `rgba(94, 205, 217, ${0.18 + (val / 6) * 0.72})`,
+                        borderColor: val > 0 ? 'rgba(94, 205, 217, 0.65)' : 'rgba(255, 255, 255, 0.08)',
                         transform: val > 0 ? `scale(${1 + val * 0.035}) translateY(-${val * 1.2}px)` : 'scale(1)',
                         boxShadow: val > 0
-                          ? `0 ${val * 2}px ${val * 4}px rgba(0,0,0,0.4), 0 0 ${val * 3}px rgba(34, 197, 94, ${val * 0.14})`
+                          ? `0 ${val * 2}px ${val * 4}px rgba(0,0,0,0.4), 0 0 ${val * 3}px rgba(94, 205, 217, ${val * 0.14})`
                           : 'none',
                       }}
                     >

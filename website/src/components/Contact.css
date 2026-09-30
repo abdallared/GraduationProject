@@ -41,7 +41,7 @@
   justify-content: center;
   width: 48px;
   height: 48px;
-  background: rgba(39, 174, 96, 0.12);
+  background: rgba(94, 205, 217, 0.10);
   border-radius: var(--radius-md);
   font-size: 1.3rem;
   flex-shrink: 0;
@@ -107,7 +107,7 @@
 .form-group input:focus,
 .form-group textarea:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.1);
+  box-shadow: 0 0 0 3px rgba(94, 205, 217, 0.10);
 }
 
 .form-group textarea {

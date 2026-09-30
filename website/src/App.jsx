@@ -14,7 +14,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ScrollProgress from './components/ScrollProgress';
 
-import heroImage from './assets/hero-device.jpg';
+import heroImage from './assets/hero-device.png';
 import lifestyleImage from './assets/lifestyle-navigation.jpg';
 
 function App() {

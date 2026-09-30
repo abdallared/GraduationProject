@@ -18,7 +18,7 @@ export default function Contact() {
       particleCount: 100,
       spread: 70,
       origin: { y: 0.65 },
-      colors: ['#22C55E', '#38BDF8', '#F59E0B', '#60A5FA', '#10B981'],
+      colors: ['#5ECDD9', '#7FE0E8', '#D4A853', '#9C9CA4', '#3CB8C6'],
     });
     setTimeout(() => setSubmitted(false), 3500);
     setFormData({ name: '', email: '', message: '' });
