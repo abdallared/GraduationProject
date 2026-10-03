@@ -28,9 +28,12 @@
   margin-bottom: 1rem;
 }
 
-.footer-logo svg {
-  width: 32px;
-  height: 32px;
+.footer-logo svg,
+.footer-logo-img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(94, 205, 217, 0.35));
 }
 
 .footer-brand p {

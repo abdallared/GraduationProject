@@ -1,13 +1,5 @@
+import logoImg from '../assets/logo.png';
 import './Footer.css';
-
-const Logo = () => (
-  <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="18" cy="18" r="16" stroke="currentColor" strokeWidth="2.5" fill="none"/>
-    <circle cx="18" cy="18" r="7" fill="#5ECDD9"/>
-    <circle cx="18" cy="18" r="3" fill="currentColor"/>
-    <path d="M2 18C2 18 8 8 18 8C28 8 34 18 34 18C34 18 28 28 18 28C8 28 2 18 2 18Z" stroke="currentColor" strokeWidth="2" fill="none"/>
-  </svg>
-);
 
 export default function Footer({ onNavigate }) {
   return (
@@ -16,7 +8,7 @@ export default function Footer({ onNavigate }) {
         <div className="footer-content">
           <div className="footer-brand">
             <div className="footer-logo">
-              <Logo />
+              <img src={logoImg} alt="Ally Vision Logo" className="footer-logo-img" />
               <span>Ally Vision</span>
             </div>
             <p>

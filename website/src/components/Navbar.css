@@ -35,10 +35,17 @@
   text-decoration: none;
 }
 
-.navbar-logo svg {
-  width: 36px;
-  height: 36px;
-  color: var(--primary);
+.navbar-logo svg,
+.navbar-logo-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(94, 205, 217, 0.35));
+  transition: transform var(--transition-normal);
+}
+
+.navbar-logo:hover .navbar-logo-img {
+  transform: scale(1.08);
 }
 
 .navbar-right {
