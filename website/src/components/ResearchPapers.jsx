@@ -1,30 +1,134 @@
 import { useState, useEffect, useRef } from 'react';
 import './ResearchPapers.css';
 
-// Primary backend API URL with fallback
-const getApiUrl = (endpoint) => {
-  // If Vite proxy is working, relative path works
-  // Otherwise direct port 5000
-  return endpoint;
-};
+// ═══════════════════════════════════════════════════════════════
+// CLIENT-SIDE FUZZY MATCHING (mirrors Python rapidfuzz logic)
+// ═══════════════════════════════════════════════════════════════
 
-async function apiFetch(endpoint, options = {}) {
-  // Try relative endpoint first (works with Vite proxy)
-  try {
-    const res = await fetch(endpoint, options);
-    if (res.ok || res.status < 500) {
-      return await res.json();
+function normalizeTitle(title) {
+  if (!title) return '';
+  let t = title.toLowerCase().trim();
+  t = t.replace(/\s*\(\d+\)\s*$/, '');
+  t = t.replace(/[^\w\s]/g, ' ');
+  t = t.replace(/\s+/g, ' ').trim();
+  return t;
+}
+
+/** Levenshtein distance (Wagner-Fischer algorithm) */
+function levenshtein(a, b) {
+  const m = a.length, n = b.length;
+  if (m === 0) return n;
+  if (n === 0) return m;
+  // Use single-row optimization for memory
+  let prev = Array.from({ length: n + 1 }, (_, i) => i);
+  let curr = new Array(n + 1);
+  for (let i = 1; i <= m; i++) {
+    curr[0] = i;
+    for (let j = 1; j <= n; j++) {
+      const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+      curr[j] = Math.min(curr[j - 1] + 1, prev[j] + 1, prev[j - 1] + cost);
     }
-  } catch {
-    // If relative fails (e.g. CORS or no proxy), try direct Flask port
+    [prev, curr] = [curr, prev];
+  }
+  return prev[n];
+}
+
+/** fuzz.ratio — simple ratio */
+function fuzzyRatio(a, b) {
+  if (a === b) return 100;
+  if (!a || !b) return 0;
+  const maxLen = Math.max(a.length, b.length);
+  if (maxLen === 0) return 100;
+  const dist = levenshtein(a, b);
+  return ((maxLen - dist) / maxLen) * 100;
+}
+
+/** fuzz.token_sort_ratio — sort tokens then compare */
+function tokenSortRatio(a, b) {
+  const sortedA = a.split(/\s+/).sort().join(' ');
+  const sortedB = b.split(/\s+/).sort().join(' ');
+  return fuzzyRatio(sortedA, sortedB);
+}
+
+/** fuzz.token_set_ratio — set intersection/difference approach */
+function tokenSetRatio(a, b) {
+  const setA = new Set(a.split(/\s+/));
+  const setB = new Set(b.split(/\s+/));
+  const intersection = [...setA].filter(t => setB.has(t));
+  const diffA = [...setA].filter(t => !setB.has(t));
+  const diffB = [...setB].filter(t => !setA.has(t));
+
+  const sorted_sect = intersection.sort().join(' ');
+  const combined_a = [sorted_sect, ...diffA.sort()].join(' ').trim();
+  const combined_b = [sorted_sect, ...diffB.sort()].join(' ').trim();
+
+  return Math.max(
+    fuzzyRatio(sorted_sect, combined_a),
+    fuzzyRatio(sorted_sect, combined_b),
+    fuzzyRatio(combined_a, combined_b)
+  );
+}
+
+/** fuzz.partial_ratio — best partial substring match */
+function partialRatio(a, b) {
+  if (a.length > b.length) [a, b] = [b, a]; // a is shorter
+  if (a.length === 0) return 0;
+  let best = 0;
+  // Slide shorter string along longer string
+  for (let i = 0; i <= b.length - a.length; i++) {
+    const sub = b.substring(i, i + a.length);
+    const score = fuzzyRatio(a, sub);
+    if (score > best) best = score;
+    if (best === 100) return 100;
+  }
+  return best;
+}
+
+/**
+ * Composite similarity — mirrors Python backend:
+ *   composite = ratio * 0.30 + token_sort * 0.30 + token_set * 0.20 + partial * 0.20
+ */
+function calculateSimilarity(title1, title2) {
+  const t1 = normalizeTitle(title1);
+  const t2 = normalizeTitle(title2);
+
+  if (t1 === t2) {
+    return { ratio: 100, token_sort: 100, token_set: 100, partial: 100, composite: 100 };
   }
 
+  const ratio = fuzzyRatio(t1, t2);
+  const token_sort = tokenSortRatio(t1, t2);
+  const token_set = tokenSetRatio(t1, t2);
+  const partial = partialRatio(t1, t2);
+  const composite = ratio * 0.30 + token_sort * 0.30 + token_set * 0.20 + partial * 0.20;
+
+  return {
+    ratio: Math.round(ratio * 100) / 100,
+    token_sort: Math.round(token_sort * 100) / 100,
+    token_set: Math.round(token_set * 100) / 100,
+    partial: Math.round(partial * 100) / 100,
+    composite: Math.round(composite * 10) / 10,
+  };
+}
+
+// ═══════════════════════════════════════════════════════════════
+// BACKEND API (only for Upload — requires local Flask)
+// ═══════════════════════════════════════════════════════════════
+async function apiFetch(endpoint, options = {}) {
+  try {
+    const res = await fetch(endpoint, options);
+    if (res.ok || res.status < 500) return await res.json();
+  } catch { /* proxy failed */ }
   const directUrl = `http://localhost:5000${endpoint}`;
   const res = await fetch(directUrl, options);
   return await res.json();
 }
 
-// SVG Icons for clean architectural UI
+// Thresholds (same as Python backend)
+const EXACT_MATCH_THRESHOLD = 95;
+const POTENTIAL_MATCH_THRESHOLD = 70;
+
+// SVG Icons
 const UploadIcon = ({ size = 18 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -50,8 +154,10 @@ const DatabaseIcon = ({ size = 18 }) => (
 );
 
 export default function ResearchPapers({ onBack }) {
-  const [activeTab, setActiveTab] = useState('upload'); // 'upload' | 'search' | 'browse'
-  const [dbStats, setDbStats] = useState({ total_papers: 137 });
+  const [activeTab, setActiveTab] = useState('search'); // 'upload' | 'search' | 'browse'
+  const [dbPapers, setDbPapers] = useState([]);
+  const [dbLoaded, setDbLoaded] = useState(false);
+  const [dbError, setDbError] = useState(false);
   const [toast, setToast] = useState(null);
 
   // Upload Tab States
@@ -59,7 +165,7 @@ export default function ResearchPapers({ onBack }) {
   const [isUploading, setIsUploading] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
   const [analysisResults, setAnalysisResults] = useState(null);
-  const [filterType, setFilterType] = useState('all'); // 'all' | 'new' | 'potential' | 'duplicate'
+  const [filterType, setFilterType] = useState('all');
   const [approvedMap, setApprovedMap] = useState({});
   const [rejectedMap, setRejectedMap] = useState({});
   const fileInputRef = useRef(null);
@@ -70,13 +176,11 @@ export default function ResearchPapers({ onBack }) {
   const [searchResult, setSearchResult] = useState(null);
 
   // Browse DB States
-  const [allPapers, setAllPapers] = useState([]);
   const [browseQuery, setBrowseQuery] = useState('');
-  const [isLoadingPapers, setIsLoadingPapers] = useState(false);
 
-  // Load database stats on mount
+  // Load papers database (static JSON) on mount
   useEffect(() => {
-    fetchStats();
+    loadPapersDb();
   }, []);
 
   const showToast = (message, type = 'success') => {
@@ -84,41 +188,44 @@ export default function ResearchPapers({ onBack }) {
     setTimeout(() => setToast(null), 4000);
   };
 
-  const fetchStats = async () => {
+  const loadPapersDb = async () => {
     try {
-      const data = await apiFetch('/api/stats');
-      if (data && data.total_papers) {
-        setDbStats(data);
+      const res = await fetch(`${import.meta.env.BASE_URL}papers_db.json`);
+      if (!res.ok) throw new Error('Failed to fetch');
+      const data = await res.json();
+      if (data && data.papers) {
+        setDbPapers(data.papers);
+        setDbLoaded(true);
+      } else {
+        throw new Error('Invalid format');
       }
     } catch (err) {
-      console.warn('Could not fetch stats:', err);
+      console.error('Failed to load papers_db.json:', err);
+      setDbError(true);
+      // Fallback: try backend API
+      try {
+        const data = await apiFetch('/api/papers');
+        if (data && data.papers) {
+          setDbPapers(data.papers);
+          setDbLoaded(true);
+          setDbError(false);
+        }
+      } catch {
+        console.warn('Backend also unavailable');
+      }
     }
   };
 
-  const loadAllPapers = async () => {
-    if (allPapers.length > 0) return;
-    setIsLoadingPapers(true);
-    try {
-      const data = await apiFetch('/api/papers');
-      if (data && data.papers) {
-        setAllPapers(data.papers);
-      }
-    } catch (err) {
-      showToast('Failed to load database papers', 'error');
-    } finally {
-      setIsLoadingPapers(false);
-    }
-  };
+  const totalPapers = dbPapers.length || 137;
 
   // Switch Tab
   const handleTabChange = (tab) => {
     setActiveTab(tab);
-    if (tab === 'browse') {
-      loadAllPapers();
-    }
   };
 
-  // File selection handlers
+  // ───────────────────────────────────────────────
+  // FILE UPLOAD (requires local Flask backend)
+  // ───────────────────────────────────────────────
   const handleFileChange = (e) => {
     const files = Array.from(e.target.files).filter(f => f.name.toLowerCase().endsWith('.pdf'));
     if (files.length === 0) {
@@ -139,7 +246,6 @@ export default function ResearchPapers({ onBack }) {
     setSelectedFiles(files);
   };
 
-  // Upload and analyze
   const runAnalysis = async () => {
     if (selectedFiles.length === 0) return;
     setIsUploading(true);
@@ -163,7 +269,6 @@ export default function ResearchPapers({ onBack }) {
 
       setAnalysisResults(data);
       showToast(`Analyzed ${data.results.length} papers successfully!`);
-      fetchStats();
     } catch (err) {
       showToast('Connection error: Ensure Flask backend is running on port 5000', 'error');
     } finally {
@@ -171,7 +276,6 @@ export default function ResearchPapers({ onBack }) {
     }
   };
 
-  // Approve single paper
   const handleApprove = async (paper) => {
     const filename = paper.saved_as || paper.filename;
     try {
@@ -180,11 +284,9 @@ export default function ResearchPapers({ onBack }) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ filename }),
       });
-
       if (res.success) {
         setApprovedMap(prev => ({ ...prev, [paper.filename]: true }));
         showToast(`Approved: "${paper.title || paper.filename}"`);
-        fetchStats();
       } else {
         showToast(res.error || 'Failed to approve', 'error');
       }
@@ -193,7 +295,6 @@ export default function ResearchPapers({ onBack }) {
     }
   };
 
-  // Reject single paper
   const handleReject = async (paper) => {
     const filename = paper.saved_as || paper.filename;
     try {
@@ -202,7 +303,6 @@ export default function ResearchPapers({ onBack }) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ filename }),
       });
-
       if (res.success) {
         setRejectedMap(prev => ({ ...prev, [paper.filename]: true }));
         showToast(`Dismissed: "${paper.filename}"`, 'info');
@@ -212,18 +312,15 @@ export default function ResearchPapers({ onBack }) {
     }
   };
 
-  // Bulk Approve all new papers
   const handleApproveAllNew = async () => {
     if (!analysisResults) return;
     const newPapers = analysisResults.results.filter(
       r => r.status === 'new' && !approvedMap[r.filename] && !rejectedMap[r.filename]
     );
-
     if (newPapers.length === 0) {
       showToast('No unapproved new papers to add', 'info');
       return;
     }
-
     const filenames = newPapers.map(p => p.saved_as || p.filename);
     try {
       const res = await apiFetch('/api/approve-all-new', {
@@ -231,21 +328,21 @@ export default function ResearchPapers({ onBack }) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ filenames }),
       });
-
       if (res.success) {
         const updated = { ...approvedMap };
         newPapers.forEach(p => { updated[p.filename] = true; });
         setApprovedMap(updated);
         showToast(`Approved all ${res.approved_count} new papers!`);
-        fetchStats();
       }
     } catch {
       showToast('Error approving papers', 'error');
     }
   };
 
-  // Search by title
-  const handleTitleSearch = async (e) => {
+  // ───────────────────────────────────────────────
+  // SEARCH BY TITLE (client-side fuzzy matching)
+  // ───────────────────────────────────────────────
+  const handleTitleSearch = (e) => {
     if (e) e.preventDefault();
     const query = searchQuery.trim();
     if (!query || query.length < 3) {
@@ -253,37 +350,66 @@ export default function ResearchPapers({ onBack }) {
       return;
     }
 
+    if (!dbLoaded || dbPapers.length === 0) {
+      showToast('Papers database not loaded yet', 'error');
+      return;
+    }
+
     setIsSearching(true);
     setSearchResult(null);
 
-    try {
-      const data = await apiFetch('/api/search-title', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ title: query }),
-      });
-
-      if (data.error) {
-        showToast(data.error, 'error');
-        return;
+    // Run matching in a setTimeout to avoid UI freeze
+    setTimeout(() => {
+      const matches = [];
+      for (const existing of dbPapers) {
+        const sim = calculateSimilarity(query, existing.title);
+        if (sim.composite >= 30) {
+          matches.push({
+            title: existing.title,
+            filename: existing.filename,
+            score: sim.composite,
+            status: sim.composite >= EXACT_MATCH_THRESHOLD
+              ? 'duplicate'
+              : sim.composite >= POTENTIAL_MATCH_THRESHOLD
+                ? 'potential'
+                : 'low',
+          });
+        }
       }
 
-      setSearchResult(data);
-    } catch {
-      showToast('Error querying backend', 'error');
-    } finally {
+      matches.sort((a, b) => b.score - a.score);
+
+      let verdict, verdict_text;
+      if (matches.length > 0 && matches[0].score >= EXACT_MATCH_THRESHOLD) {
+        verdict = 'duplicate';
+        verdict_text = 'This paper likely already exists in the database';
+      } else if (matches.length > 0 && matches[0].score >= POTENTIAL_MATCH_THRESHOLD) {
+        verdict = 'potential';
+        verdict_text = 'Similar papers found — manual review recommended';
+      } else {
+        verdict = 'new';
+        verdict_text = 'No matching papers found — this appears to be new';
+      }
+
+      setSearchResult({
+        query,
+        verdict,
+        verdict_text,
+        top_matches: matches.slice(0, 3),
+        total_compared: dbPapers.length,
+      });
       setIsSearching(false);
-    }
+    }, 50);
   };
 
-  // Filtered papers list
+  // Filtered analysis results
   const filteredResults = analysisResults?.results.filter((paper) => {
     if (filterType === 'all') return true;
     return paper.status === filterType;
   }) || [];
 
   // Filtered DB papers for browse tab
-  const filteredDbPapers = allPapers.filter((p) => {
+  const filteredDbPapers = dbPapers.filter((p) => {
     const q = browseQuery.toLowerCase();
     return p.title.toLowerCase().includes(q) || p.filename.toLowerCase().includes(q);
   });
@@ -299,8 +425,9 @@ export default function ResearchPapers({ onBack }) {
           </button>
 
           <div className="db-pill">
-            <span className="dot" style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--accent)' }}></span>
-            Indexed Database: <span className="num">{dbStats.total_papers || 137} Unique Papers</span>
+            <span className="dot" style={{ width: 8, height: 8, borderRadius: '50%', background: dbLoaded ? 'var(--accent)' : '#F87171' }}></span>
+            Indexed Database: <span className="num">{totalPapers} Unique Papers</span>
+            {dbLoaded && <span style={{ fontSize: '0.7rem', color: '#4ADE80', marginLeft: '0.4rem' }}>● Online</span>}
           </div>
         </div>
 
@@ -335,7 +462,7 @@ export default function ResearchPapers({ onBack }) {
             onClick={() => handleTabChange('browse')}
           >
             <DatabaseIcon size={18} />
-            <span>Browse Database ({dbStats.total_papers || 137})</span>
+            <span>Browse Database ({totalPapers})</span>
           </button>
         </div>
 
@@ -344,6 +471,18 @@ export default function ResearchPapers({ onBack }) {
             ======================================================== */}
         {activeTab === 'upload' && (
           <div className="upload-view">
+            {/* Backend requirement notice */}
+            <div className="backend-notice">
+              <div className="backend-notice-icon">⚙️</div>
+              <div>
+                <strong>Local Backend Required</strong>
+                <p>
+                  PDF upload and analysis requires the Flask backend running locally on port 5000.
+                  Run <code>python Researching/app.py</code> from the project root to start it.
+                </p>
+              </div>
+            </div>
+
             {/* Dropzone */}
             <div
               className={`upload-dropzone ${isDragging ? 'dragging' : ''}`}
@@ -603,7 +742,7 @@ export default function ResearchPapers({ onBack }) {
         )}
 
         {/* ========================================================
-            TAB 2: SEARCH TITLE (TOP 3 MATCHES)
+            TAB 2: SEARCH TITLE (TOP 3 MATCHES) — CLIENT-SIDE
             ======================================================== */}
         {activeTab === 'search' && (
           <div className="search-card-container">
@@ -613,7 +752,7 @@ export default function ResearchPapers({ onBack }) {
                 <span>Compare Paper by Title</span>
               </h3>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-                Type or paste a candidate paper's title to search our 137 unique papers and see the <strong>Top 3</strong> closest matches.
+                Type or paste a candidate paper's title to search our {totalPapers} unique papers and see the <strong>Top 3</strong> closest matches.
               </p>
 
               <form onSubmit={handleTitleSearch} className="search-input-group">
@@ -626,13 +765,13 @@ export default function ResearchPapers({ onBack }) {
                 <button
                   type="submit"
                   className="btn btn-primary"
-                  disabled={isSearching}
+                  disabled={isSearching || !dbLoaded}
                 >
-                  {isSearching ? 'Comparing...' : 'Compare Title'}
+                  {isSearching ? 'Comparing...' : !dbLoaded ? 'Loading DB...' : 'Compare Title'}
                 </button>
               </form>
 
-              {/* Sample queries for quick test */}
+              {/* Sample queries */}
               <div style={{ marginTop: '1rem', display: 'flex', gap: '0.5rem', flexWrap: 'wrap', alignItems: 'center' }}>
                 <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Try example:</span>
                 <button
@@ -660,6 +799,13 @@ export default function ResearchPapers({ onBack }) {
                   Autonomous Drone Vision
                 </button>
               </div>
+
+              {/* Database status indicator */}
+              {dbError && !dbLoaded && (
+                <div style={{ marginTop: '1rem', padding: '0.8rem 1rem', background: 'rgba(248,113,113,0.1)', borderRadius: '8px', border: '1px solid rgba(248,113,113,0.3)', fontSize: '0.85rem', color: '#F87171' }}>
+                  ⚠️ Could not load papers database. Make sure <code>papers_db.json</code> is in the <code>public/</code> folder.
+                </div>
+              )}
 
               {/* Verdict Banner */}
               {searchResult && (
@@ -738,23 +884,29 @@ export default function ResearchPapers({ onBack }) {
         )}
 
         {/* ========================================================
-            TAB 3: BROWSE ALL 137 UNIQUE PAPERS
+            TAB 3: BROWSE ALL UNIQUE PAPERS — CLIENT-SIDE
             ======================================================== */}
         {activeTab === 'browse' && (
           <div className="browse-papers-box">
             <div className="browse-search-bar">
               <input
                 type="text"
-                placeholder="Search across all 137 indexed papers by title or filename..."
+                placeholder={`Search across all ${totalPapers} indexed papers by title or filename...`}
                 value={browseQuery}
                 onChange={(e) => setBrowseQuery(e.target.value)}
               />
             </div>
 
-            {isLoadingPapers ? (
+            {!dbLoaded ? (
               <div style={{ textAlign: 'center', padding: '2rem' }}>
-                <div className="spinner-ring"></div>
-                <p>Loading database papers...</p>
+                {dbError ? (
+                  <p style={{ color: '#F87171' }}>⚠️ Failed to load papers database</p>
+                ) : (
+                  <>
+                    <div className="spinner-ring"></div>
+                    <p>Loading database papers...</p>
+                  </>
+                )}
               </div>
             ) : (
               <div className="papers-table-wrap">
