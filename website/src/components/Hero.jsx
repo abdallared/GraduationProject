@@ -2,7 +2,7 @@ import './Hero.css';
 import SpatialRadarCanvas from './SpatialRadarCanvas';
 import AnimatedCounter from './AnimatedCounter';
 
-export default function Hero({ heroImage }) {
+export default function Hero({ heroImage, onNavigateResearch }) {
   return (
     <section className="hero" id="hero">
       <SpatialRadarCanvas />
