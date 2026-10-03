@@ -1,0 +1,964 @@
+{
+  "papers": [
+    {
+      "filename": "00492-AAAI23.LiY.pdf",
+      "title": "BEVDepth: Acquisition of Reliable Depth for Multi-View 3D Object Detection",
+      "normalized_title": "bevdepth acquisition of reliable depth for multi view 3d object detection",
+      "file_hash": "faf1a9fe87c6c52ac6789621fbb17b13",
+      "added_at": "2026-10-02T23:38:11.871130"
+    },
+    {
+      "filename": "1-s2.0-S0006899325003555-main.pdf",
+      "title": "A quantitative assessment of EOG eye tracking during free viewing in sighted and in congenitally blind",
+      "normalized_title": "a quantitative assessment of eog eye tracking during free viewing in sighted and in congenitally blind",
+      "file_hash": "edb3aa7eb1f4c5415f60b0d79c4f1072",
+      "added_at": "2026-10-02T23:38:11.905343"
+    },
+    {
+      "filename": "1-s2.0-S1053811921003062-main.pdf",
+      "title": "Topographic maps and neural tuning for sensory substitution dimensions learned in adulthood in a congenital blind subject",
+      "normalized_title": "topographic maps and neural tuning for sensory substitution dimensions learned in adulthood in a congenital blind subject",
+      "file_hash": "082038a38837ece9bce2f6b92ad693fe",
+      "added_at": "2026-10-02T23:38:11.913511"
+    },
+    {
+      "filename": "1-s2.0-S1053811924001162-main.pdf",
+      "title": "Visual Mental Imagery and Neural Dynamics of Sensory Substitution in the Blindfolded Subjects",
+      "normalized_title": "visual mental imagery and neural dynamics of sensory substitution in the blindfolded subjects",
+      "file_hash": "7eb4c002946f953214573e320201d212",
+      "added_at": "2026-10-02T23:38:11.928279"
+    },
+    {
+      "filename": "1-s2.0-S105381192500655X-main.pdf",
+      "title": "Long-term visual-to-tactile stimulation induces functional reorganization of thalamic pathways to achieve visual perception",
+      "normalized_title": "long term visual to tactile stimulation induces functional reorganization of thalamic pathways to achieve visual perception",
+      "file_hash": "e5cfa540e04034d037efec3c6662b3bd",
+      "added_at": "2026-10-02T23:38:11.950053"
+    },
+    {
+      "filename": "10.1177@0145482x19842491.pdf",
+      "title": "A Haptic Navigation Aid for Individuals with Visual Impairments: Indoor and Outdoor Feasibility Evaluations of the LaserNavigator",
+      "normalized_title": "a haptic navigation aid for individuals with visual impairments indoor and outdoor feasibility evaluations of the lasernavigator",
+      "file_hash": "cc1396b94218267deb2bca48b7284ad8",
+      "added_at": "2026-10-02T23:38:11.953201"
+    },
+    {
+      "filename": "1310.4392v1.pdf",
+      "title": "Electrotactile Vision Substitution for 3D Trajectory Following",
+      "normalized_title": "electrotactile vision substitution for 3d trajectory following",
+      "file_hash": "7135c908d76f8fdb10fd07d74cb33e1d",
+      "added_at": "2026-10-02T23:38:11.956409"
+    },
+    {
+      "filename": "2021-10.pdf",
+      "title": "Visually Impaired Indoor Navigation using YOLO",
+      "normalized_title": "visually impaired indoor navigation using yolo",
+      "file_hash": "11970be1cbdacebee924b90026c5ce14",
+      "added_at": "2026-10-02T23:38:12.060233"
+    },
+    {
+      "filename": "2108.09174v1.pdf",
+      "title": "Trans4Trans: Efﬁcient Transformer for Transparent",
+      "normalized_title": "trans4trans efﬁcient transformer for transparent",
+      "file_hash": "d4ba4ba54aa6c5525b6779daa5a10953",
+      "added_at": "2026-10-02T23:38:12.236235"
+    },
+    {
+      "filename": "2201.03036v1.pdf",
+      "title": "In-Device Feedback in Immersive Head-Mounted",
+      "normalized_title": "in device feedback in immersive head mounted",
+      "file_hash": "3e94ad0728ce176cfacde0d9d4aebad3",
+      "added_at": "2026-10-02T23:38:12.281388"
+    },
+    {
+      "filename": "2201.04453v1 (1).pdf",
+      "title": "Obstacle avoidance for blind people using a 3D camera and a haptic",
+      "normalized_title": "obstacle avoidance for blind people using a 3d camera and a haptic",
+      "file_hash": "f1a5a2960111788df85381253dfdc6d0",
+      "added_at": "2026-10-02T23:38:12.339269"
+    },
+    {
+      "filename": "2208.14685v1.pdf",
+      "title": "Julie Ducasse1,2*, Anke Brock3*, Christophe Jouffrais1,2",
+      "normalized_title": "julie ducasse1 2 anke brock3 christophe jouffrais1 2",
+      "file_hash": "d25f11c9c1c6c05a1b5ebb4f6981f9d9",
+      "added_at": "2026-10-02T23:38:12.385255"
+    },
+    {
+      "filename": "2312.07571v1.pdf",
+      "title": "Obstacle Detection For Visually Impaired People",
+      "normalized_title": "obstacle detection for visually impaired people",
+      "file_hash": "e81bb0f8df57bd33a1bebd9158d39048",
+      "added_at": "2026-10-02T23:38:12.459065"
+    },
+    {
+      "filename": "2412.19105v1.pdf",
+      "title": "How Can Haptic Feedback Assist People with Blind and Low Vision (BLV): A Systematic Literature Review",
+      "normalized_title": "how can haptic feedback assist people with blind and low vision blv a systematic literature review",
+      "file_hash": "1f42f98b3b0e8a46c09d781ded8bf5b7",
+      "added_at": "2026-10-02T23:38:12.475135"
+    },
+    {
+      "filename": "2501.05147v1.pdf",
+      "title": "A Systematic Literature Review on Deep Learning-based Depth Estimation in Computer Vision",
+      "normalized_title": "a systematic literature review on deep learning based depth estimation in computer vision",
+      "file_hash": "963f8b7a8bb4d98da1dc01349a724f43",
+      "added_at": "2026-10-02T23:38:12.490700"
+    },
+    {
+      "filename": "2503.16475v2.pdf",
+      "title": "LLM-Glasses: GenAI-driven Glasses with Haptic Feedback for Navigation of Visually Impaired People",
+      "normalized_title": "llm glasses genai driven glasses with haptic feedback for navigation of visually impaired people",
+      "file_hash": "f7ff4e3b5274ebad9ab8b9f170821a48",
+      "added_at": "2026-10-02T23:38:12.501760"
+    },
+    {
+      "filename": "2505.14298v1.pdf",
+      "title": "A Review of Vision-Based Assistive Systems for",
+      "normalized_title": "a review of vision based assistive systems for",
+      "file_hash": "d89f01effdb99cf9fe4472eed03590e3",
+      "added_at": "2026-10-02T23:38:12.540181"
+    },
+    {
+      "filename": "2506.02676v1.pdf",
+      "title": "Sight Guide: A Wearable Assistive Perception and Navigation System for the Vision Assistance Race in the Cybathlon 2024",
+      "normalized_title": "sight guide a wearable assistive perception and navigation system for the vision assistance race in the cybathlon 2024",
+      "file_hash": "0e9f3d3e793b7a0370e7f5832faa809c",
+      "added_at": "2026-10-02T23:38:12.622745"
+    },
+    {
+      "filename": "2511.10026v3.pdf",
+      "title": "Grating haptic perception through touchscreen: Sighted vs. Visually Impaired",
+      "normalized_title": "grating haptic perception through touchscreen sighted vs visually impaired",
+      "file_hash": "e3cd4b7cbb4975517648b5ae80ea322b",
+      "added_at": "2026-10-02T23:38:12.636529"
+    },
+    {
+      "filename": "3517428.3544797.pdf",
+      "title": "Animations at Your Fingertips: Using a Refreshable Tactile Display to Convey Motion Graphics for People who are Blind or have Low Vision",
+      "normalized_title": "animations at your fingertips using a refreshable tactile display to convey motion graphics for people who are blind or have low vision",
+      "file_hash": "58caf3927edb37d0276d8763cf7f7e53",
+      "added_at": "2026-10-02T23:38:12.664542"
+    },
+    {
+      "filename": "3663547.3746338.pdf",
+      "title": "Tactile Data Comics: Combining Step-by-step Presentation of Tactile Graphics with Verbal Narration for the Blind and Visually Impaired",
+      "normalized_title": "tactile data comics combining step by step presentation of tactile graphics with verbal narration for the blind and visually impaired",
+      "file_hash": "0dab2ca97eb5dd6519d151b680b0e3ba",
+      "added_at": "2026-10-02T23:38:12.729054"
+    },
+    {
+      "filename": "62fe1c66d32fd96ad040285a9ec3af56c912.pdf",
+      "title": "1CSE Department, Egypt-Japan University of Science and Technology, New Borg El-Arab City, Alexandria, Egypt",
+      "normalized_title": "1cse department egypt japan university of science and technology new borg el arab city alexandria egypt",
+      "file_hash": "ab49702ced9e931637e865e958b5c552",
+      "added_at": "2026-10-02T23:38:12.751274"
+    },
+    {
+      "filename": "A Visual Positioning System for Indoor Blind Navigation.pdf",
+      "title": "A Visual Positioning System for Indoor Blind Navigation",
+      "normalized_title": "a visual positioning system for indoor blind navigation",
+      "file_hash": "06a45f96724352930a0894f61cd73c74",
+      "added_at": "2026-10-02T23:38:12.766644"
+    },
+    {
+      "filename": "A-data-fusion-framework-based-on-heterogeneous-information-network-embedding-for-trigger.pdf",
+      "title": "0957-4174/© 2023 Elsevier Ltd. All rights reserved.",
+      "normalized_title": "0957 4174 2023 elsevier ltd all rights reserved",
+      "file_hash": "36b7dd16b825c2ae521358bf62f587ac",
+      "added_at": "2026-10-02T23:38:12.825749"
+    },
+    {
+      "filename": "A-skin-integrated-multimodal-haptic-interface-for-immersive-tactile-feedback.pdf",
+      "title": "Nature Electronics | Volume 6 | December 2023 | 1020–1031 1020",
+      "normalized_title": "nature electronics volume 6 december 2023 1020 1031 1020",
+      "file_hash": "809d78a6eb7d316eda20f259d3ef46b8",
+      "added_at": "2026-10-02T23:38:12.948753"
+    },
+    {
+      "filename": "A-smart-obstacle-avoiding-technology-based-on-depth-camera-for-blind-and-visually-impaired.pdf",
+      "title": "A smart obstacle avoiding technology based on depth camera for blind and visually impaired people",
+      "normalized_title": "a smart obstacle avoiding technology based on depth camera for blind and visually impaired people",
+      "file_hash": "16206d2ac7fb78499e356b7d220cbf04",
+      "added_at": "2026-10-02T23:38:12.966772"
+    },
+    {
+      "filename": "A_Survey_on_Outdoor_Navigation_Applications_for_People_With_Visual_Impairments.pdf",
+      "title": "A Survey on Outdoor Navigation Applications for People With Visual Impairments",
+      "normalized_title": "a survey on outdoor navigation applications for people with visual impairments",
+      "file_hash": "59e8413a262e033153e1ba4086697894",
+      "added_at": "2026-10-02T23:38:12.984024"
+    },
+    {
+      "filename": "abdalla-et-al-2025-sensory-driven-micro-interventions-for-improved-health-and-wellbeing.pdf",
+      "title": "Sensory-driven micro-interventions for improved health and wellbeing",
+      "normalized_title": "sensory driven micro interventions for improved health and wellbeing",
+      "file_hash": "2e9245d4ba4b1a82612408ad15224b0d",
+      "added_at": "2026-10-02T23:38:12.994820"
+    },
+    {
+      "filename": "Advanced Intelligent Systems - 2026 - Muhammad - Enhanced Monocular Depth Estimation Using ResNet Backbone and Multiscale.pdf",
+      "title": "Enhanced Monocular Depth Estimation Using ResNet Backbone and Multiscale Feature Decoding for Precise Object Distance Measurement",
+      "normalized_title": "enhanced monocular depth estimation using resnet backbone and multiscale feature decoding for precise object distance measurement",
+      "file_hash": "df9a137313fb13dc44f18b739b63a543",
+      "added_at": "2026-10-02T23:38:13.009610"
+    },
+    {
+      "filename": "An assistive haptic-based obstacle avoidance system for individuals with profound visual impairment.pdf",
+      "title": "An assistive haptic-based obstacle avoidance system for individuals with profound visual impairment",
+      "normalized_title": "an assistive haptic based obstacle avoidance system for individuals with profound visual impairment",
+      "file_hash": "5dfab9283fd9599020fa710178c97ecd",
+      "added_at": "2026-10-02T23:38:13.016341"
+    },
+    {
+      "filename": "An effective obstacle detection system using deep learning advantages to.pdf",
+      "title": "An effective obstacle detection system using deep learning advantages to aid blind and visually impaired navigation",
+      "normalized_title": "an effective obstacle detection system using deep learning advantages to aid blind and visually impaired navigation",
+      "file_hash": "9e6539f04f6a352e9139bb2975364f5a",
+      "added_at": "2026-10-02T23:38:13.030220"
+    },
+    {
+      "filename": "An RGB-D Camera Based Visual Positioning.pdf",
+      "title": "An RGB-D Camera Based Visual Positioning System for Assistive Navigation by a Robotic Navigation Aid",
+      "normalized_title": "an rgb d camera based visual positioning system for assistive navigation by a robotic navigation aid",
+      "file_hash": "c7ee22a8f005e4cfc793f331897831b0",
+      "added_at": "2026-10-02T23:38:13.092419"
+    },
+    {
+      "filename": "An-effective-obstacle-detection-system-using-deep-learning-advantages-to-aid-blind-and-visually.pdf",
+      "title": "2090-4479/© 2023 THE AUTHORS. Published by Elsevier BV on behalf of Faculty of Engineering, Ain Shams University. This is an open access article under the CC",
+      "normalized_title": "2090 4479 2023 the authors published by elsevier bv on behalf of faculty of engineering ain shams university this is an open access article under the cc",
+      "file_hash": "9840dea66d7bb802237590764bd09c0a",
+      "added_at": "2026-10-02T23:38:13.169035"
+    },
+    {
+      "filename": "An-efficient-object-detection-system-for-indoor-assistance-navigation-using-deep-learning.pdf",
+      "title": "11042_2022_12577_Article 1..18",
+      "normalized_title": "11042_2022_12577_article 1 18",
+      "file_hash": "458549ed875653461f05fd7e28c765a1",
+      "added_at": "2026-10-02T23:38:13.176322"
+    },
+    {
+      "filename": "Ann NY Acad Sci - 2006 - BACH‐Y‐RITA - Tactile Sensory Substitution Studies.pdf",
+      "title": "Tactile Sensory Substitution Studies",
+      "normalized_title": "tactile sensory substitution studies",
+      "file_hash": "896d4ea3b7b40766580f1c9f693dfc95",
+      "added_at": "2026-10-02T23:38:13.178416"
+    },
+    {
+      "filename": "APC210058.pdf",
+      "title": "A Robotic Assisted System Using Deep Learning for Navigation and Reading IoT Based Home Automation for Visually Impaired",
+      "normalized_title": "a robotic assisted system using deep learning for navigation and reading iot based home automation for visually impaired",
+      "file_hash": "a6d001860d32910e3d9195516f166aa0",
+      "added_at": "2026-10-02T23:38:13.179814"
+    },
+    {
+      "filename": "APC210204.pdf",
+      "title": "VirtualEye: Android Application for the Visually Impaired",
+      "normalized_title": "virtualeye android application for the visually impaired",
+      "file_hash": "d75ad418860edf485cc606a05c2c6eef",
+      "added_at": "2026-10-02T23:38:13.181205"
+    },
+    {
+      "filename": "Audio-Visual_Thumble_AVT_A_low-vision_rehabilitation_device_using_multisensory_feedbacks.pdf",
+      "title": "Audio-Visual Thumble (AVT): A low-vision rehabilitation device using multisensory feedbacks",
+      "normalized_title": "audio visual thumble avt a low vision rehabilitation device using multisensory feedbacks",
+      "file_hash": "be1635403a9a0f408c80c04bc0d05420",
+      "added_at": "2026-10-02T23:38:13.184262"
+    },
+    {
+      "filename": "barontini2021.pdf",
+      "title": "Integrating Wearable Haptics and Obstacle Avoidance for the Visually Impaired in Indoor Navigation: A User-Centered Approach",
+      "normalized_title": "integrating wearable haptics and obstacle avoidance for the visually impaired in indoor navigation a user centered approach",
+      "file_hash": "708a1f08f3dacb525b25f2eba6795743",
+      "added_at": "2026-10-02T23:38:13.186812"
+    },
+    {
+      "filename": "bauer2020.pdf",
+      "title": "Enhancing perception for the visually impaired with deep learning techniques and low-cost wearable sensors",
+      "normalized_title": "enhancing perception for the visually impaired with deep learning techniques and low cost wearable sensors",
+      "file_hash": "b103f5bf6ab7e699fd239a5983494dfe",
+      "added_at": "2026-10-02T23:38:13.194934"
+    },
+    {
+      "filename": "Bidirectional visual-tactile cross-modal generation using latent feature space.pdf",
+      "title": "Bidirectional visual-tactile cross-modal generation using latent feature space flow model",
+      "normalized_title": "bidirectional visual tactile cross modal generation using latent feature space flow model",
+      "file_hash": "5bb06cdd6d4f409221687a8be6e9c66c",
+      "added_at": "2026-10-02T23:38:13.205043"
+    },
+    {
+      "filename": "dakopoulos2010.pdf",
+      "title": "IEEE TRANSACTIONS ON SYSTEMS, MAN, AND CYBERNETICS—PART C: APPLICATIONS AND REVIEWS, VOL. 40, NO. 1, JANUARY 2010 25",
+      "normalized_title": "ieee transactions on systems man and cybernetics part c applications and reviews vol 40 no 1 january 2010 25",
+      "file_hash": "f7dfa49fb65bda0bcf9cd0670365b938",
+      "added_at": "2026-10-02T23:38:13.238426"
+    },
+    {
+      "filename": "Design-and-development-of-an-indoor-navigation-system-using-denoising-autoencoder-based-convolutional.pdf",
+      "title": "Design and development of an indoor navigation system using denoising autoencoder based convolutional neural network for visually impaired people",
+      "normalized_title": "design and development of an indoor navigation system using denoising autoencoder based convolutional neural network for visually impaired people",
+      "file_hash": "4e8556821ba24a5b0aade013c24a520b",
+      "added_at": "2026-10-02T23:38:13.252397"
+    },
+    {
+      "filename": "Development of a visual to audio and tactile substitution(1).pdf",
+      "title": "Development of a visual to audio and tactile substitution system for mobility and orientation of visually impaired people: a review",
+      "normalized_title": "development of a visual to audio and tactile substitution system for mobility and orientation of visually impaired people a review",
+      "file_hash": "9af2c00c18877a65afdf2e511d6fed07",
+      "added_at": "2026-10-02T23:38:13.262980"
+    },
+    {
+      "filename": "Electronics Letters - 2026 - Zhang - A Portable Intelligent Navigation System Based on Embedded Hybrid Computing for.pdf",
+      "title": "A Portable Intelligent Navigation System Based on Embedded Hybrid Computing for Visually Impaired People",
+      "normalized_title": "a portable intelligent navigation system based on embedded hybrid computing for visually impaired people",
+      "file_hash": "9ab5fde8e30b023fcfd1443a10b9c351",
+      "added_at": "2026-10-02T23:38:13.271547"
+    },
+    {
+      "filename": "Enhanced-data-fusion-of-ultrasonic-and-stereo-vision-in-real-time-obstacle-detection.pdf",
+      "title": "Enhanced data fusion of ultrasonic and stereo vision in real-time obstacle detection",
+      "normalized_title": "enhanced data fusion of ultrasonic and stereo vision in real time obstacle detection",
+      "file_hash": "4a2ee42d55ac03c7f019f2d3b4fad7c9",
+      "added_at": "2026-10-02T23:38:13.279534"
+    },
+    {
+      "filename": "Exploiting-the-haptic-and-audio-channels-to-improve-orientation-and-mobility-apps-for-the.pdf",
+      "title": "Exploiting the haptic and audio channels to improve orientation and mobility apps for the visually impaired",
+      "normalized_title": "exploiting the haptic and audio channels to improve orientation and mobility apps for the visually impaired",
+      "file_hash": "9a0d65fd621156074cc2e3b70765195e",
+      "added_at": "2026-10-02T23:38:13.287352"
+    },
+    {
+      "filename": "Exploring_Tactile_Perception_Development_and_Evaluation_of_the_PinArray_a_Novel_Haptic_Device(1).pdf",
+      "title": "Exploring Tactile Perception: Development and Evaluation of the PinArray, a Novel Haptic Device",
+      "normalized_title": "exploring tactile perception development and evaluation of the pinarray a novel haptic device",
+      "file_hash": "33ddc47faf55e86d52d7d73bba50398d",
+      "added_at": "2026-10-02T23:38:13.295569"
+    },
+    {
+      "filename": "FAIA231495.pdf",
+      "title": "Research on Multimodal Interaction Design Patterns for Visually Impaired People Under Sensory Compensation Theory",
+      "normalized_title": "research on multimodal interaction design patterns for visually impaired people under sensory compensation theory",
+      "file_hash": "48bc5126b92499cb5572d94151d591cd",
+      "added_at": "2026-10-02T23:38:13.300039"
+    },
+    {
+      "filename": "faucheu2019.pdf",
+      "title": "Tactile aesthetics_ Textures that we like or hate to touch",
+      "normalized_title": "tactile aesthetics_ textures that we like or hate to touch",
+      "file_hash": "1a7c0d7cece323433666eeacecdb84e9",
+      "added_at": "2026-10-02T23:38:13.310434"
+    },
+    {
+      "filename": "fnhum-08-00291.pdf",
+      "title": "Successful tactile based visual sensory substitution use functions independently of visual pathway integrity",
+      "normalized_title": "successful tactile based visual sensory substitution use functions independently of visual pathway integrity",
+      "file_hash": "04b713b1fd9886055b201a38c60472f1",
+      "added_at": "2026-10-02T23:38:13.316274"
+    },
+    {
+      "filename": "Haptic-Feedback-Remote-Control-System-for-Electric-Mechanical-Assembly-Vehicle-Developed.pdf",
+      "title": "Haptic Feedback Remote Control System for Electric Mechanical Assembly Vehicle Developed to Avoid Obstacles",
+      "normalized_title": "haptic feedback remote control system for electric mechanical assembly vehicle developed to avoid obstacles",
+      "file_hash": "1b24f4e44d78cd42bae0f00f4dbad00b",
+      "added_at": "2026-10-02T23:38:13.329054"
+    },
+    {
+      "filename": "HaptoMapping_Visuo-Haptic_Augmented_Reality_by_Embedding_User-Imperceptible_Tactile_Display_Control_Signals_in_a_Projected_Image.pdf",
+      "title": "HaptoMapping: Visuo-Haptic Augmented Reality by Embedding User-Imperceptible Tactile Display Control Signals in a Projected Image",
+      "normalized_title": "haptomapping visuo haptic augmented reality by embedding user imperceptible tactile display control signals in a projected image",
+      "file_hash": "72c161dd539052c02f88673737eeb572",
+      "added_at": "2026-10-02T23:38:13.333175"
+    },
+    {
+      "filename": "iee0713.pdf",
+      "title": "system (TVSS) for the study of active sensing. Two algorithms,",
+      "normalized_title": "system tvss for the study of active sensing two algorithms",
+      "file_hash": "674f3959d8274483e411e725d3ef40fe",
+      "added_at": "2026-10-02T23:38:13.423119"
+    },
+    {
+      "filename": "Impact-of-Device-and-Environment-on-Visual-Auditory-Sensory-Substitution-A-Comprehensive.pdf",
+      "title": "Impact of Device and Environment on Visual-Auditory Sensory Substitution: A Comprehensive Behavioral Analysis Using the vOICe Algorithm",
+      "normalized_title": "impact of device and environment on visual auditory sensory substitution a comprehensive behavioral analysis using the voice algorithm",
+      "file_hash": "f1b58971d8f2e215abd18cbf153e6c84",
+      "added_at": "2026-10-02T23:38:13.427745"
+    },
+    {
+      "filename": "koruprolu-et-al-2025-the-multimodal-exhibition-tangible-interactions-for-people-with-visual-impairments.pdf",
+      "title": "The Multimodal Exhibition: Tangible Interactions for People With Visual Impairments",
+      "normalized_title": "the multimodal exhibition tangible interactions for people with visual impairments",
+      "file_hash": "6343980b6a3663829278c4d486d9ab32",
+      "added_at": "2026-10-02T23:38:13.430725"
+    },
+    {
+      "filename": "lahav2008.pdf",
+      "title": "Haptic-feedback support for cognitive mapping of unknown spaces",
+      "normalized_title": "haptic feedback support for cognitive mapping of unknown spaces",
+      "file_hash": "2dca26dfa8c8beb1aa0ba95d583488a9",
+      "added_at": "2026-10-02T23:38:13.459758"
+    },
+    {
+      "filename": "lloyd-esenkaya2020.pdf",
+      "title": "Multisensory inclusive design with sensory substitution",
+      "normalized_title": "multisensory inclusive design with sensory substitution",
+      "file_hash": "6ddc3c8973b81e6557934385e1a308ef",
+      "added_at": "2026-10-02T23:38:13.465091"
+    },
+    {
+      "filename": "mueen-et-al-2022-multi-obstacle-aware-smart-navigation-system-for-visually-impaired-people-in-fog-connected-iot-cloud.pdf",
+      "title": "Multi-obstacle aware smart navigation system for visually impaired people in fog connected IoT-cloud environment",
+      "normalized_title": "multi obstacle aware smart navigation system for visually impaired people in fog connected iot cloud environment",
+      "file_hash": "131e0ae3e0a17f319a58d858686dc5b0",
+      "added_at": "2026-10-02T23:38:13.476177"
+    },
+    {
+      "filename": "Multi-faceted sensory substitution using wearable technology for curb alerting  a pilot investigation with persons with blindness and low vision.pdf",
+      "title": "Multi-faceted sensory substitution using wearable technology for curb alerting: a pilot investigatio",
+      "normalized_title": "multi faceted sensory substitution using wearable technology for curb alerting a pilot investigatio",
+      "file_hash": "be54f9d30870b349d6a3a0ed1acd6aa4",
+      "added_at": "2026-10-02T23:38:13.502984"
+    },
+    {
+      "filename": "negen-et-al-2023-sensory-augmentation-for-a-rapid-motor-task-in-a-multisensory-environment.pdf",
+      "title": "Sensory augmentation for a rapid motor task in a multisensory environment",
+      "normalized_title": "sensory augmentation for a rapid motor task in a multisensory environment",
+      "file_hash": "503e4fd18d0aa0daee8eabc380f59e2a",
+      "added_at": "2026-10-02T23:38:13.505122"
+    },
+    {
+      "filename": "neuroimaging-tells-us-about-sensory-substitution.pdf",
+      "title": "Colline Poiriera, Anne G. De Voldera, Christian Scheiberb,/C3",
+      "normalized_title": "colline poiriera anne g de voldera christian scheiberb c3",
+      "file_hash": "202d2a9cdffd8ecb39556f0e9d62093c",
+      "added_at": "2026-10-02T23:38:13.534344"
+    },
+    {
+      "filename": "ODD-M3D_Object-Wise_Dense_Depth_Estimation_for_Monocular_3-D_Object_Detection (1).pdf",
+      "title": "ODD-M3D: Object-Wise Dense Depth Estimation for Monocular 3-D Object Detection",
+      "normalized_title": "odd m3d object wise dense depth estimation for monocular 3 d object detection",
+      "file_hash": "a6128a1fc87430134703164c0c407f5f",
+      "added_at": "2026-10-02T23:38:13.543978"
+    },
+    {
+      "filename": "oduah-et-al-2025-the-development-of-a-wearable-goggle-echolocation-device-to-support-people-who-are-visually-impaired.pdf",
+      "title": "The development of a wearable goggle echolocation device to support people who are visually impaired with unhindered and unaided movement",
+      "normalized_title": "the development of a wearable goggle echolocation device to support people who are visually impaired with unhindered and unaided movement",
+      "file_hash": "0d7e4b1a887939854bbebbdfe5fd961c",
+      "added_at": "2026-10-02T23:38:13.551502"
+    },
+    {
+      "filename": "out (1).pdf",
+      "title": "EMPOWERING VISUALLY IMPAIRED INDIVIDUALS WITH HOLISTIC",
+      "normalized_title": "empowering visually impaired individuals with holistic",
+      "file_hash": "4a045f12b8a7908bbc790add1244aa5c",
+      "added_at": "2026-10-02T23:38:13.564581"
+    },
+    {
+      "filename": "out.pdf",
+      "title": "Computer Vision for Assistive Technologies: Enhancing",
+      "normalized_title": "computer vision for assistive technologies enhancing",
+      "file_hash": "1cf64bacd28cf5ec953fc438809e260f",
+      "added_at": "2026-10-02T23:38:13.578142"
+    },
+    {
+      "filename": "PIIS2405844024078563.pdf",
+      "title": "A comprehensive review of navigation systems for visually impaired individuals",
+      "normalized_title": "a comprehensive review of navigation systems for visually impaired individuals",
+      "file_hash": "83b509189f8002a4ef0dcdd0862b3a4e",
+      "added_at": "2026-10-02T23:38:13.601419"
+    },
+    {
+      "filename": "pone.0023264.pdf",
+      "title": "pone.0023264 1..11",
+      "normalized_title": "pone 0023264 1 11",
+      "file_hash": "72b5e35ca4164f11fce1aa4b029a7c19",
+      "added_at": "2026-10-02T23:38:13.605524"
+    },
+    {
+      "filename": "processes-09-01726-v4.pdf",
+      "title": "A Systematic Literature Review on the Automatic Creation of Tactile Graphics for the Blind and Visually Impaired",
+      "normalized_title": "a systematic literature review on the automatic creation of tactile graphics for the blind and visually impaired",
+      "file_hash": "87c3c79bf6345561c8494d908a18ead9",
+      "added_at": "2026-10-02T23:38:13.619813"
+    },
+    {
+      "filename": "Re-imagining sensory substitution through gestural control  Point-To-Tell 2.pdf",
+      "title": "Re-imagining sensory substitution through gestural control: Point-To-Tell 2",
+      "normalized_title": "re imagining sensory substitution through gestural control point to tell 2",
+      "file_hash": "3195b41d3994b1b09f476b4f7365b098",
+      "added_at": "2026-10-02T23:38:13.638909"
+    },
+    {
+      "filename": "Real-time Visual SLAM Trajectory Optimization.pdf",
+      "title": "Real-time Visual SLAM Trajectory Optimization",
+      "normalized_title": "real time visual slam trajectory optimization",
+      "file_hash": "1671f62ec14660500195f4f17070a199",
+      "added_at": "2026-10-02T23:38:13.673780"
+    },
+    {
+      "filename": "Real-Time-3D-Object-Detection-Recognition-and-Presentation-Using-a-Mobile-Device-for-Assistive.pdf",
+      "title": "Real-Time 3D Object Detection, Recognition and Presentation Using a Mobile Device for Assistive Navigation",
+      "normalized_title": "real time 3d object detection recognition and presentation using a mobile device for assistive navigation",
+      "file_hash": "688409b9d8db0196f2ba096f351c9031",
+      "added_at": "2026-10-02T23:38:13.683957"
+    },
+    {
+      "filename": "Real-time-Obstacle-Perception-and-Distance-Estimation-Based-on-Binocular-Vision.pdf",
+      "title": "Real-time Obstacle Perception and Distance Estimation Based on Binocular Vision",
+      "normalized_title": "real time obstacle perception and distance estimation based on binocular vision",
+      "file_hash": "d75ade4d39f604aaf5572cf350150d2d",
+      "added_at": "2026-10-02T23:38:13.694433"
+    },
+    {
+      "filename": "role-of-visual-deprivation-and-experience.pdf",
+      "title": "The role of visual deprivation and experience on the performance of sensory substitution devices",
+      "normalized_title": "the role of visual deprivation and experience on the performance of sensory substitution devices",
+      "file_hash": "73c8a56d819d614f0c2d74fa6857166f",
+      "added_at": "2026-10-02T23:38:13.704707"
+    },
+    {
+      "filename": "s00221-021-06181-x.pdf",
+      "title": "Tactile spatial discrimination on the torso using vibrotactile and force stimulation",
+      "normalized_title": "tactile spatial discrimination on the torso using vibrotactile and force stimulation",
+      "file_hash": "5876f6a099d3ec628f5b4ea709cffeb9",
+      "added_at": "2026-10-02T23:38:13.713776"
+    },
+    {
+      "filename": "s00221-026-07309-7.pdf",
+      "title": "RESEARCHExperimental Brain Research (2026) 244:109",
+      "normalized_title": "researchexperimental brain research 2026 244 109",
+      "file_hash": "fcc56e2cce99412d9da9503e888868b2",
+      "added_at": "2026-10-02T23:38:13.795583"
+    },
+    {
+      "filename": "s00530-025-02139-z.pdf",
+      "title": "Eyesight is fundamental to human interaction with the envi -",
+      "normalized_title": "eyesight is fundamental to human interaction with the envi",
+      "file_hash": "00f591c13b6999dfbfee0f5fa7be6e2c",
+      "added_at": "2026-10-02T23:38:13.900215"
+    },
+    {
+      "filename": "s11042-026-21158-0.pdf",
+      "title": "1 Crossmodal Perception Laboratory, Department of Experimental Psychology, University of",
+      "normalized_title": "1 crossmodal perception laboratory department of experimental psychology university of",
+      "file_hash": "a726a6b8737f4a16cdd43fff44707470",
+      "added_at": "2026-10-02T23:38:13.963317"
+    },
+    {
+      "filename": "s11042-026-21198-6.pdf",
+      "title": "sisou@mail.ncku.edu.tw",
+      "normalized_title": "sisou mail ncku edu tw",
+      "file_hash": "77233e43f0ac03e5d9f18f02f9ad6ad2",
+      "added_at": "2026-10-02T23:38:14.073698"
+    },
+    {
+      "filename": "s12193-021-00376-w.pdf",
+      "title": "SoundSight: a mobile sensory substitution device that sonifies colour, distance, and temperature",
+      "normalized_title": "soundsight a mobile sensory substitution device that sonifies colour distance and temperature",
+      "file_hash": "ed6e8fb00394d1fd727da66a635936f5",
+      "added_at": "2026-10-02T23:38:14.081000"
+    },
+    {
+      "filename": "s12193-023-00427-4.pdf",
+      "title": "REVIEW PAPERJournal on Multimodal User Interfaces (2024) 18:135–156",
+      "normalized_title": "review paperjournal on multimodal user interfaces 2024 18 135 156",
+      "file_hash": "b933a0cfed7489998f8e981517a82e61",
+      "added_at": "2026-10-02T23:38:14.162111"
+    },
+    {
+      "filename": "s12193-024-00447-8.pdf",
+      "title": "The effects of haptic, visual and olfactory augmentations on food consumed while wearing an extended reality headset",
+      "normalized_title": "the effects of haptic visual and olfactory augmentations on food consumed while wearing an extended reality headset",
+      "file_hash": "8466dfbab5f191dd55c5e3756b38bc34",
+      "added_at": "2026-10-02T23:38:14.177948"
+    },
+    {
+      "filename": "s12193-025-00463-2(1).pdf",
+      "title": "Haptic and auditory cues: a study on independent navigation for visually impaired individuals",
+      "normalized_title": "haptic and auditory cues a study on independent navigation for visually impaired individuals",
+      "file_hash": "135f818125759b025c409eca51e3b5b6",
+      "added_at": "2026-10-02T23:38:14.188600"
+    },
+    {
+      "filename": "s12559-026-10547-0.pdf",
+      "title": "their environments [ 1]. One of the most significant factors",
+      "normalized_title": "their environments 1 one of the most significant factors",
+      "file_hash": "55a6a815b5ab7da1f9d83a44789f945f",
+      "added_at": "2026-10-02T23:38:14.298965"
+    },
+    {
+      "filename": "s12984-021-00935-y (1).pdf",
+      "title": "Enabling visually impaired people to learn three-dimensional tactile graphics with a 3DOF haptic mouse",
+      "normalized_title": "enabling visually impaired people to learn three dimensional tactile graphics with a 3dof haptic mouse",
+      "file_hash": "5c9ca597e88416ee2bf6c4ad251aaaf5",
+      "added_at": "2026-10-02T23:38:14.314826"
+    },
+    {
+      "filename": "s13414-024-02959-7.pdf",
+      "title": "Viewed touch influences tactile detection by altering decision criterion",
+      "normalized_title": "viewed touch influences tactile detection by altering decision criterion",
+      "file_hash": "3bd390870c137f57a6ee72bc5f42b5cb",
+      "added_at": "2026-10-02T23:38:14.326359"
+    },
+    {
+      "filename": "s40580-026-00552-2.pdf",
+      "title": "REVIEW Open AccessNano Convergence He et al. Nano Convergence            (2026) 13:22",
+      "normalized_title": "review open accessnano convergence he et al nano convergence 2026 13 22",
+      "file_hash": "0c4568605799e8793e2fd05d70cfb9fa",
+      "added_at": "2026-10-02T23:38:14.452390"
+    },
+    {
+      "filename": "s41235-023-00495-w (1).pdf",
+      "title": "A direct comparison of sound and vibration as sources of stimulation for a sensory substitution glove",
+      "normalized_title": "a direct comparison of sound and vibration as sources of stimulation for a sensory substitution glove",
+      "file_hash": "ff43304ab2cf561a7412bf6fa4168329",
+      "added_at": "2026-10-02T23:38:14.459907"
+    },
+    {
+      "filename": "s41378-026-01190-8.pdf",
+      "title": "Complementary visual localization and tactile mapping approach for robotic perception of millimeter-sized objects with irregular surfaces",
+      "normalized_title": "complementary visual localization and tactile mapping approach for robotic perception of millimeter sized objects with irregular surfaces",
+      "file_hash": "e77bec55f17c123918cd53f7d2e77a12",
+      "added_at": "2026-10-02T23:38:14.476079"
+    },
+    {
+      "filename": "s41467-019-13173-7 (1).pdf",
+      "title": "A thalamocortical pathway for fast rerouting of tactile information to occipital cortex in congenital blindness",
+      "normalized_title": "a thalamocortical pathway for fast rerouting of tactile information to occipital cortex in congenital blindness",
+      "file_hash": "feeac19678b0594227d6ca3ca4a775d5",
+      "added_at": "2026-10-02T23:38:14.482546"
+    },
+    {
+      "filename": "s41467-024-46709-7.pdf",
+      "title": "Height-renderable morphable tactile display enabled by programmable modulation of local stiffness in photothermally active polymer",
+      "normalized_title": "height renderable morphable tactile display enabled by programmable modulation of local stiffness in photothermally active polymer",
+      "file_hash": "a8bdfefa43ce60cd7efc1dd63e70cb51",
+      "added_at": "2026-10-02T23:38:14.501878"
+    },
+    {
+      "filename": "s41467-025-58085-x.pdf",
+      "title": "A wearable obstacle avoidance device for visually impaired individuals with cross-modal learning",
+      "normalized_title": "a wearable obstacle avoidance device for visually impaired individuals with cross modal learning",
+      "file_hash": "8e30fe24a549f326cd9c84e6d8fa00ac",
+      "added_at": "2026-10-02T23:38:14.529663"
+    },
+    {
+      "filename": "s41467-025-63644-3.pdf",
+      "title": "Wearable interactive full-body motion tracking and haptic feedback network systems with deep learning",
+      "normalized_title": "wearable interactive full body motion tracking and haptic feedback network systems with deep learning",
+      "file_hash": "306e3cc2f4da49dc6948eeca077fa8bc",
+      "added_at": "2026-10-02T23:38:14.538595"
+    },
+    {
+      "filename": "s41467-026-73000-8.pdf",
+      "title": "Soft tactile chip with in-situ sensing for haptic rendering and reverse feedback enhanced gross to fine teleoperation",
+      "normalized_title": "soft tactile chip with in situ sensing for haptic rendering and reverse feedback enhanced gross to fine teleoperation",
+      "file_hash": "b5fc439442d03cb206d4a360cc648a54",
+      "added_at": "2026-10-02T23:38:14.553500"
+    },
+    {
+      "filename": "s41528-022-00216-1.pdf",
+      "title": "Highly pixelated, untethered tactile interfaces for an ultra-flexible on-skin telehaptic system",
+      "normalized_title": "highly pixelated untethered tactile interfaces for an ultra flexible on skin telehaptic system",
+      "file_hash": "c924385e72649e4e751fe06f59b96df3",
+      "added_at": "2026-10-02T23:38:14.563704"
+    },
+    {
+      "filename": "s41528-025-00426-3.pdf",
+      "title": "Low-voltage wearable tactile display with thermo-pneumatic actuation",
+      "normalized_title": "low voltage wearable tactile display with thermo pneumatic actuation",
+      "file_hash": "fed17be648138b6c4e00d719aebf917b",
+      "added_at": "2026-10-02T23:38:14.575181"
+    },
+    {
+      "filename": "s41539-025-00385-4 (1).pdf",
+      "title": "Learning visual to auditory sensory substitution reveals flexibility in image to sound mapping",
+      "normalized_title": "learning visual to auditory sensory substitution reveals flexibility in image to sound mapping",
+      "file_hash": "77941c1f8f8a1905cdbee68dba147fcc",
+      "added_at": "2026-10-02T23:38:14.580804"
+    },
+    {
+      "filename": "s41598-019-57217-w (1).pdf",
+      "title": "Neural Networks Mediating Perceptual Learning in Congenital Blindness",
+      "normalized_title": "neural networks mediating perceptual learning in congenital blindness",
+      "file_hash": "af3812d14a5e656eda068d5595ba120c",
+      "added_at": "2026-10-02T23:38:14.587452"
+    },
+    {
+      "filename": "s41598-020-59102-3 (1).pdf",
+      "title": "Poor resolution at the back of the tongue is the bottleneck for spatial pattern recognition",
+      "normalized_title": "poor resolution at the back of the tongue is the bottleneck for spatial pattern recognition",
+      "file_hash": "56c87c697ce32fcd054f1b77c841e14b",
+      "added_at": "2026-10-02T23:38:14.594195"
+    },
+    {
+      "filename": "s41598-021-90132-7 (1).pdf",
+      "title": "Applying a novel visual-to-touch sensory substitution for studying tactile reference frames",
+      "normalized_title": "applying a novel visual to touch sensory substitution for studying tactile reference frames",
+      "file_hash": "b086297cbc1717edbc8c26d13ba02ffe",
+      "added_at": "2026-10-02T23:38:14.605189"
+    },
+    {
+      "filename": "s41598-021-94133-4 (2).pdf",
+      "title": "Training-induced plasticity enables visualizing sounds with a visual-to-auditory conversion device",
+      "normalized_title": "training induced plasticity enables visualizing sounds with a visual to auditory conversion device",
+      "file_hash": "81376c577a5ee9f48d332085079344ac",
+      "added_at": "2026-10-02T23:38:14.611440"
+    },
+    {
+      "filename": "s41598-022-08187-z.pdf",
+      "title": "Congenitally blind adults can learn to identify face-shapes via auditory sensory substitution and successfully generalize some of the learned features",
+      "normalized_title": "congenitally blind adults can learn to identify face shapes via auditory sensory substitution and successfully generalize some of the learned features",
+      "file_hash": "518b0c3c9b5309622b83144ade8aa5c2",
+      "added_at": "2026-10-02T23:38:14.632071"
+    },
+    {
+      "filename": "s41598-023-49507-1.pdf",
+      "title": "Blind people can actively manipulate virtual objects with a novel tactile device",
+      "normalized_title": "blind people can actively manipulate virtual objects with a novel tactile device",
+      "file_hash": "71ecdf884fadc57497b1fcc3e15388be",
+      "added_at": "2026-10-02T23:38:14.637798"
+    },
+    {
+      "filename": "s41598-024-60343-9.pdf",
+      "title": "Tactile adaptation to orientation produces a robust tilt aftereffect and exhibits crossmodal transfer when tested in vision",
+      "normalized_title": "tactile adaptation to orientation produces a robust tilt aftereffect and exhibits crossmodal transfer when tested in vision",
+      "file_hash": "e5382a3ba8ed0eac65e5adb9904c229a",
+      "added_at": "2026-10-02T23:38:14.651172"
+    },
+    {
+      "filename": "s41598-024-70990-7.pdf",
+      "title": "Psychometric evaluation of high-resolution electrotactile interface for conveying 3D spatial information",
+      "normalized_title": "psychometric evaluation of high resolution electrotactile interface for conveying 3d spatial information",
+      "file_hash": "30392dede145cee82c15415d9c44bce8",
+      "added_at": "2026-10-02T23:38:14.662492"
+    },
+    {
+      "filename": "s41598-024-74416-2.pdf",
+      "title": "embedded system for blind indoor",
+      "normalized_title": "embedded system for blind indoor",
+      "file_hash": "94791adbd7bc0facf8edf7854f1c2ef3",
+      "added_at": "2026-10-02T23:38:14.833789"
+    },
+    {
+      "filename": "s41598-024-79845-7.pdf",
+      "title": "navigation interface for vision",
+      "normalized_title": "navigation interface for vision",
+      "file_hash": "90cdd860088ad68cf66bf7662521f866",
+      "added_at": "2026-10-02T23:38:14.939716"
+    },
+    {
+      "filename": "s41598-025-01529-7.pdf",
+      "title": "stereo vision for visually impaired",
+      "normalized_title": "stereo vision for visually impaired",
+      "file_hash": "39f63a43a47f4bcc35c0ee02ee662548",
+      "added_at": "2026-10-02T23:38:15.024862"
+    },
+    {
+      "filename": "s41598-025-08155-3.pdf",
+      "title": "optimization for robust indoor",
+      "normalized_title": "optimization for robust indoor",
+      "file_hash": "f14a3ece8bfd86fdf033fe5310ea6264",
+      "added_at": "2026-10-02T23:38:15.190614"
+    },
+    {
+      "filename": "s41598-025-14946-5.pdf",
+      "title": "Leveraging assistive technology for",
+      "normalized_title": "leveraging assistive technology for",
+      "file_hash": "ec63c1cae7be76fa583bbcb008927b26",
+      "added_at": "2026-10-02T23:38:15.296623"
+    },
+    {
+      "filename": "s41598-025-20765-5.pdf",
+      "title": "Enhancing indoor monitoring of",
+      "normalized_title": "enhancing indoor monitoring of",
+      "file_hash": "33fc7937798d864366699d0156574d9b",
+      "added_at": "2026-10-02T23:38:15.401913"
+    },
+    {
+      "filename": "s41598-025-21720-0.pdf",
+      "title": "vibrational guidance for individuals",
+      "normalized_title": "vibrational guidance for individuals",
+      "file_hash": "be1fc1655f6aca889e55a475cc345a96",
+      "added_at": "2026-10-02T23:38:15.479264"
+    },
+    {
+      "filename": "s41598-025-27603-8 (1).pdf",
+      "title": "visually impaired people through",
+      "normalized_title": "visually impaired people through",
+      "file_hash": "a38ec2ee44e926fbcde04842a5976bce",
+      "added_at": "2026-10-02T23:38:15.573027"
+    },
+    {
+      "filename": "s41598-025-28038-x.pdf",
+      "title": "Unveiling interactions of spatial-",
+      "normalized_title": "unveiling interactions of spatial",
+      "file_hash": "09c89bbcf88d63ea95cfdeae5351e51b",
+      "added_at": "2026-10-02T23:38:15.660667"
+    },
+    {
+      "filename": "s41598-025-29947-7.pdf",
+      "title": "visually challenged people through",
+      "normalized_title": "visually challenged people through",
+      "file_hash": "70673e91c959d7dcf854d8eb0af8d9b3",
+      "added_at": "2026-10-02T23:38:15.781255"
+    },
+    {
+      "filename": "s41598-025-99903-y.pdf",
+      "title": "Leveraging retinanet based object",
+      "normalized_title": "leveraging retinanet based object",
+      "file_hash": "3bd344b242a93c7fc115f2fc64c702a5",
+      "added_at": "2026-10-02T23:38:15.878322"
+    },
+    {
+      "filename": "s41598-026-37578-9.pdf",
+      "title": "for the blind and visually impaired",
+      "normalized_title": "for the blind and visually impaired",
+      "file_hash": "1826b8422c30036f265a53954a0c8921",
+      "added_at": "2026-10-02T23:38:15.960024"
+    },
+    {
+      "filename": "s41598-026-45310-w.pdf",
+      "title": "Si-Qi Li1, Wei Feng2,3,4, Bin Liu5, Xin Tong1 & Qiang Li1",
+      "normalized_title": "si qi li1 wei feng2 3 4 bin liu5 xin tong1 qiang li1",
+      "file_hash": "73bcc4ee8e691481defaecda2ada436d",
+      "added_at": "2026-10-02T23:38:16.075774"
+    },
+    {
+      "filename": "s41928-023-01074-z.pdf",
+      "title": "A skin-integrated multimodal haptic interface for immersive tactile feedback",
+      "normalized_title": "a skin integrated multimodal haptic interface for immersive tactile feedback",
+      "file_hash": "771ad778cce5db44905b08e9d83c22f0",
+      "added_at": "2026-10-02T23:38:16.142487"
+    },
+    {
+      "filename": "s44443-025-00234-9(1).pdf",
+      "title": "AI smart cane technology and assistive navigation for visually impaired users: an overview",
+      "normalized_title": "ai smart cane technology and assistive navigation for visually impaired users an overview",
+      "file_hash": "5d2e198e150055636dc7b9e92174b9c6",
+      "added_at": "2026-10-02T23:38:16.158470"
+    },
+    {
+      "filename": "SensARy Substitution.pdf",
+      "title": "SensARy Substitution: Augmented Reality Techniques to Enhance Force Perception in Touchless Robot Control",
+      "normalized_title": "sensary substitution augmented reality techniques to enhance force perception in touchless robot control",
+      "file_hash": "abf2c3dcb42c059ed5b2aab8424e535f",
+      "added_at": "2026-10-02T23:38:16.161420"
+    },
+    {
+      "filename": "sensors-16-01954.pdf",
+      "title": "Expanding the Detection of Traversable Area with RealSense for the Visually Impaired",
+      "normalized_title": "expanding the detection of traversable area with realsense for the visually impaired",
+      "file_hash": "cbdd14cfba838d95c085911048eef217",
+      "added_at": "2026-10-02T23:38:16.221821"
+    },
+    {
+      "filename": "sensors-17-01890-v2.pdf",
+      "title": "Detecting Traversable Area and Water Hazards for the Visually Impaired with a pRGB-D Sensor",
+      "normalized_title": "detecting traversable area and water hazards for the visually impaired with a prgb d sensor",
+      "file_hash": "a1cc11347ad041c711ceff188c530789",
+      "added_at": "2026-10-02T23:38:16.251591"
+    },
+    {
+      "filename": "sensors-22-01859.pdf",
+      "title": "The Unfolding Space Glove: A Wearable Spatio-Visual to Haptic Sensory Substitution Device for Blind People",
+      "normalized_title": "the unfolding space glove a wearable spatio visual to haptic sensory substitution device for blind people",
+      "file_hash": "556622359388d58f41d3438de970ffd4",
+      "added_at": "2026-10-02T23:38:16.266518"
+    },
+    {
+      "filename": "sensors-22-06537.pdf",
+      "title": "Efficient Obstacle Detection and Tracking Using RGB-D Sensor Data in Dynamic Environments for Robotic Applications",
+      "normalized_title": "efficient obstacle detection and tracking using rgb d sensor data in dynamic environments for robotic applications",
+      "file_hash": "eb11ad8b36f214cd66330b30b8566fce",
+      "added_at": "2026-10-02T23:38:16.292313"
+    },
+    {
+      "filename": "sensors-25-02213.pdf",
+      "title": "Technological Advancements in Human Navigation for the Visually Impaired: A Systematic Review",
+      "normalized_title": "technological advancements in human navigation for the visually impaired a systematic review",
+      "file_hash": "9709c829dc187c1be7657494e4a65ea4",
+      "added_at": "2026-10-02T23:38:16.296531"
+    },
+    {
+      "filename": "sensors-25-04338.pdf",
+      "title": "YOLO-Extreme: Obstacle Detection for Visually Impaired Navigation Under Foggy Weather",
+      "normalized_title": "yolo extreme obstacle detection for visually impaired navigation under foggy weather",
+      "file_hash": "ffb2fef545689c3283c517bd96994f05",
+      "added_at": "2026-10-02T23:38:16.315076"
+    },
+    {
+      "filename": "Sensory-substitution-and-human-machine-interface.pdf",
+      "title": "Paul Bach-y-Rita1and Stephen W. Kercel2",
+      "normalized_title": "paul bach y rita1and stephen w kercel2",
+      "file_hash": "1a38fd13e5b7622d260ef335ba41c839",
+      "added_at": "2026-10-02T23:38:16.351442"
+    },
+    {
+      "filename": "Sensory_Substitution_Device_for_Time_Presentation_SpatialTemporal_Vibrotactile_Encoding_for_Presenting_Time_on_the_Human_Wrist.pdf",
+      "title": "Sensory Substitution Device for Time Presentation: Spatial&#x2013;Temporal Vibrotactile Encoding for Presenting Time on the Human Wrist",
+      "normalized_title": "sensory substitution device for time presentation spatial x2013 temporal vibrotactile encoding for presenting time on the human wrist",
+      "file_hash": "8f35b5c641240f12e703151759a835c1",
+      "added_at": "2026-10-02T23:38:16.362105"
+    },
+    {
+      "filename": "shahira2019.pdf",
+      "title": "Obstacle Detection, Depth Estimation And Warning System For Visually Impaired People",
+      "normalized_title": "obstacle detection depth estimation and warning system for visually impaired people",
+      "file_hash": "9678764cc92913835627d95ca0052d40",
+      "added_at": "2026-10-02T23:38:16.364088"
+    },
+    {
+      "filename": "Structured-deep-learning-based-object-specific-distance-estimation-from-a-monocular-image.pdf",
+      "title": "Structured deep learning based object-specific distance estimation from a monocular image",
+      "normalized_title": "structured deep learning based object specific distance estimation from a monocular image",
+      "file_hash": "f8029d2aef1a639079abe45bd0ab782c",
+      "added_at": "2026-10-02T23:38:16.371872"
+    },
+    {
+      "filename": "Survey_of_Pseudo-Haptics_Haptic_Feedback_Design_and_Application_Proposals.pdf",
+      "title": "Survey of Pseudo-Haptics: Haptic Feedback Design and Application Proposals",
+      "normalized_title": "survey of pseudo haptics haptic feedback design and application proposals",
+      "file_hash": "b26ede2da89c1aa6bc2ed72d3431b604",
+      "added_at": "2026-10-02T23:38:16.376309"
+    },
+    {
+      "filename": "tang-huang-2025-navigation-assistance-via-haptic-technology-for-blind-or-low-vision-users-a-scoping-review.pdf",
+      "title": "Navigation Assistance Via Haptic Technology for Blind or Low-Vision Users: A Scoping Review",
+      "normalized_title": "navigation assistance via haptic technology for blind or low vision users a scoping review",
+      "file_hash": "42cc59ae346686b64488c458de7e402e",
+      "added_at": "2026-10-02T23:38:16.378236"
+    },
+    {
+      "filename": "Toward Image-to-Tactile Cross-Modal Perception.pdf",
+      "title": "Toward Image-to-Tactile Cross-Modal Perception for Visually Impaired People",
+      "normalized_title": "toward image to tactile cross modal perception for visually impaired people",
+      "file_hash": "37b8b85daaa870c6953ac429884cca36",
+      "added_at": "2026-10-02T23:38:16.392012"
+    },
+    {
+      "filename": "Vis-Assist-computer-vision-and-haptic-feedback-based-wearable-assistive-device-for-visually.pdf",
+      "title": "Vis-Assist: computer vision and haptic feedback-based wearable",
+      "normalized_title": "vis assist computer vision and haptic feedback based wearable",
+      "file_hash": "82b02b025bad458444afab374c670839",
+      "added_at": "2026-10-02T23:38:16.439876"
+    },
+    {
+      "filename": "Visualexperiencesintheblind.pdf",
+      "title": "Visual experiences in the blind induced by an auditory sensory substitution device",
+      "normalized_title": "visual experiences in the blind induced by an auditory sensory substitution device",
+      "file_hash": "50404ef4c86882a128a1e44f025ad3d7",
+      "added_at": "2026-10-02T23:38:16.441724"
+    },
+    {
+      "filename": "Visually Impaired Indoor Navigation using YOLO.pdf",
+      "title": "Visually Impaired Indoor Navigation using YOLO Based Object Recognition, Monocular Depth Estimation and Binaural Sounds",
+      "normalized_title": "visually impaired indoor navigation using yolo based object recognition monocular depth estimation and binaural sounds",
+      "file_hash": "e4308e3e05cf25a9a10d2e68000e6401",
+      "added_at": "2026-10-02T23:38:16.454815"
+    }
+  ],
+  "built_at": "2026-10-02T23:38:16.462959"
+}
