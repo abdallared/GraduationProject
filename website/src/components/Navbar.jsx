@@ -11,7 +11,7 @@ const Logo = () => (
   </svg>
 );
 
-export default function Navbar() {
+export default function Navbar({ currentPage = 'home', onNavigate }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [theme, setTheme] = useState(() => {
@@ -33,23 +33,83 @@ export default function Navbar() {
     setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
   };
 
-  const handleLinkClick = () => setMenuOpen(false);
+  const handleLinkClick = (e, targetHash) => {
+    setMenuOpen(false);
+    if (currentPage !== 'home' && targetHash) {
+      if (onNavigate) onNavigate('home');
+      setTimeout(() => {
+        const el = document.querySelector(targetHash);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+  };
+
+  const handleNavigatePage = (page) => {
+    setMenuOpen(false);
+    if (onNavigate) onNavigate(page);
+  };
 
   return (
     <nav className={`navbar${scrolled ? ' scrolled' : ''}`}>
       <div className="container navbar-inner">
-        <a href="#hero" className="navbar-logo">
+        <a
+          href="#hero"
+          className="navbar-logo"
+          onClick={(e) => {
+            if (currentPage !== 'home') {
+              e.preventDefault();
+              handleNavigatePage('home');
+            }
+          }}
+        >
           <Logo />
           <span>Ally Vision</span>
         </a>
 
         <div className="navbar-right">
           <div className={`navbar-links${menuOpen ? ' open' : ''}`}>
-            <a href="#technology" onClick={handleLinkClick}>Technology</a>
-            <a href="#features" onClick={handleLinkClick}>Features</a>
-            <a href="#about" onClick={handleLinkClick}>About</a>
-            <a href="#team" onClick={handleLinkClick}>Team</a>
-            <a href="#contact" onClick={handleLinkClick} className="navbar-cta">Contact Us</a>
+            <a href="#technology" onClick={(e) => handleLinkClick(e, '#technology')}>Technology</a>
+            <a href="#features" onClick={(e) => handleLinkClick(e, '#features')}>Features</a>
+            <a href="#about" onClick={(e) => handleLinkClick(e, '#about')}>About</a>
+            <a href="#team" onClick={(e) => handleLinkClick(e, '#team')}>Team</a>
+
+            {/* Research Papers Dedicated Page Button */}
+            <button
+              type="button"
+              className={`navbar-research-btn ${currentPage === 'research' ? 'active' : ''}`}
+              onClick={() => handleNavigatePage('research')}
+              style={{
+                background: currentPage === 'research' ? 'rgba(94, 205, 217, 0.15)' : 'transparent',
+                border: '1px solid ' + (currentPage === 'research' ? 'var(--accent)' : 'rgba(94, 205, 217, 0.25)'),
+                color: currentPage === 'research' ? 'var(--accent)' : 'var(--text-primary)',
+                padding: '0.45rem 1rem',
+                borderRadius: 'var(--radius-pill)',
+                fontSize: '0.85rem',
+                fontWeight: 600,
+                cursor: 'pointer',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.4rem',
+                transition: 'all 0.2s ease',
+              }}
+            >
+              <span>Research</span>
+              <span
+                style={{
+                  background: 'var(--accent)',
+                  color: '#111114',
+                  fontSize: '0.65rem',
+                  padding: '0.15rem 0.4rem',
+                  borderRadius: '100px',
+                  fontWeight: 700,
+                  letterSpacing: '0.5px',
+                }}
+              >
+                AI Dedup
+              </span>
+            </button>
+
+            <a href="#contact" onClick={(e) => handleLinkClick(e, '#contact')} className="navbar-cta">Contact Us</a>
           </div>
 
           <button
