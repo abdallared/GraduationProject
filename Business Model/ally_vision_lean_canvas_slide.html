@@ -1,0 +1,271 @@
+<html><head><meta charset="utf-8"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+  @page {
+    size: A4 landscape;
+    margin: 6mm 10mm;
+  }
+  @media print {
+    html, body {
+      width: 100%;
+      height: 100%;
+      background: #FFFFFF !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+    .no-print {
+      display: none !important;
+    }
+    header, main, footer {
+      max-width: 100% !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+  }
+</style>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "tertiary-fixed-dim": "#c6c6c6",
+          "secondary-fixed-dim": "#b7c8e1",
+          "surface-container": "#eeeeee",
+          "outline": "#7e7576",
+          "on-secondary-fixed-variant": "#38485d",
+          "primary-container": "#1b1b1b",
+          "surface-container-high": "#e8e8e8",
+          "on-tertiary": "#ffffff",
+          "tertiary-container": "#1b1b1b",
+          "surface-tint": "#5e5e5e",
+          "surface-container-highest": "#e2e2e2",
+          "primary-fixed": "#e2e2e2",
+          "on-background": "#1a1c1c",
+          "outline-variant": "#cfc4c5",
+          "surface": "#f9f9f9",
+          "on-surface-variant": "#4c4546",
+          "on-tertiary-fixed-variant": "#474747",
+          "secondary-fixed": "#d3e4fe",
+          "primary-fixed-dim": "#c6c6c6",
+          "on-error-container": "#93000a",
+          "surface-container-lowest": "#ffffff",
+          "surface-container-low": "#f3f3f4",
+          "primary": "#000000",
+          "surface-bright": "#f9f9f9",
+          "on-primary-container": "#848484",
+          "on-secondary-container": "#54647a",
+          "on-secondary": "#ffffff",
+          "on-secondary-fixed": "#0b1c30",
+          "on-primary": "#ffffff",
+          "error-container": "#ffdad6",
+          "error": "#ba1a1a",
+          "tertiary": "#000000",
+          "on-tertiary-container": "#848484",
+          "on-error": "#ffffff",
+          "inverse-primary": "#c6c6c6",
+          "on-primary-fixed-variant": "#474747",
+          "on-tertiary-fixed": "#1b1b1b",
+          "inverse-on-surface": "#f0f1f1",
+          "secondary": "#505f76",
+          "secondary-container": "#d0e1fb",
+          "on-surface": "#1a1c1c",
+          "background": "#f9f9f9",
+          "surface-variant": "#e2e2e2",
+          "on-primary-fixed": "#1b1b1b",
+          "tertiary-fixed": "#e2e2e2",
+          "surface-dim": "#dadada",
+          "inverse-surface": "#2f3131"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-md": "2rem",
+          "space-xs": "0.5rem",
+          "space-sm": "1rem",
+          "margin": "4rem",
+          "space-lg": "4rem",
+          "space-xl": "6rem",
+          "gutter": "2rem"
+        },
+        "fontFamily": {
+          "label-md": ["Inter"],
+          "headline-xl": ["Inter"],
+          "headline-lg": ["Inter"],
+          "headline-md": ["Inter"],
+          "body-md": ["Inter"],
+          "body-lg": ["Inter"]
+        },
+        "fontSize": {
+          "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+          "headline-xl": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+          "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+          "headline-md": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+          "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }],
+          "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+        }
+      }
+    }
+  }
+</script>
+</head><body class="bg-white text-on-background font-body-md antialiased selection:bg-primary selection:text-white min-h-screen flex flex-col justify-between">
+<!-- Header Section -->
+<header class="w-full max-w-[1440px] mx-auto px-6 pt-6 pb-2">
+<div class="flex flex-col gap-1">
+<span class="font-label-md text-label-md text-outline tracking-wider uppercase">EXECUTIVE PITCH DECK // 04</span>
+<h1 class="font-headline-lg text-headline-lg text-primary text-3xl font-semibold">Lean Canvas: Business Architecture</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-4xl text-sm">Validated B2B2C economic engine and distribution model for visual-to-tactile assistive tech.</p>
+</div>
+</header>
+<!-- Main Canvas Grid -->
+<main class="w-full max-w-[1440px] mx-auto px-6 py-2 flex-grow">
+<div class="grid grid-cols-5 gap-3">
+<!-- 1. PROBLEM -->
+<div class="col-span-1 bg-white border border-[#E2E8F0] p-3.5 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<h3 class="font-label-md text-label-md uppercase tracking-wider text-primary font-bold text-[11px]">1. Problem</h3>
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="text-black"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+</div>
+<ul class="space-y-1.5 text-[11px] text-on-surface-variant list-disc pl-3.5 leading-snug">
+<li>Severe spatial isolation (285M visually impaired).</li>
+<li>Audio fatigue & ear blockage from talking screen readers (masks critical traffic sounds).</li>
+<li>Clunky traditional canes fail on head-level hazards.</li>
+</ul>
+</div>
+<div class="mt-3 pt-2 border-t border-[#E2E8F0]">
+<span class="text-[10px] font-semibold text-primary uppercase block mb-0.5">Existing Alternatives:</span>
+<p class="text-[10px] text-on-surface-variant leading-tight">White cane ($30), Guide dog ($40k+), 7Sense SuperBrain ($12,000+).</p>
+</div>
+</div>
+<!-- 2. SOLUTION -->
+<div class="col-span-1 bg-white border border-[#E2E8F0] p-3.5 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<h3 class="font-label-md text-label-md uppercase tracking-wider text-primary font-bold text-[11px]">2. Solution</h3>
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="text-black"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>
+</div>
+<ul class="space-y-1.5 text-[11px] text-on-surface-variant list-disc pl-3.5 leading-snug">
+<li>Dual wide-angle stereo vision & depth sensors.</li>
+<li>Real-time on-device edge AI (&lt;100ms obstacle detection & depth mapping).</li>
+<li>5×5 abdominal vibrotactile haptic matrix conveying direction, proximity, and hazard level silently.</li>
+</ul>
+</div>
+</div>
+<!-- 3. UNIQUE VALUE PROPOSITION -->
+<div class="col-span-1 bg-white border border-[#E2E8F0] p-3.5 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<h3 class="font-label-md text-label-md uppercase tracking-wider text-primary font-bold text-[11px]">3. Value Proposition</h3>
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="text-black"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+</div>
+<p class="text-[11px] text-on-surface-variant mb-2 font-medium leading-snug">"Spatial Sight Through Touch": Real-time 3D spatial awareness translated into silent tactile feedback.</p>
+</div>
+<div class="mt-3 pt-2 border-t border-[#E2E8F0]">
+<span class="text-[10px] font-semibold text-primary uppercase block mb-0.5">High-level Concept:</span>
+<p class="text-[10px] text-on-surface-variant leading-tight">"Autonomous Spatial Awareness for the Blind — Ear-Free, Hands-Free."</p>
+</div>
+</div>
+<!-- 4. UNFAIR ADVANTAGE -->
+<div class="col-span-1 bg-white border border-[#E2E8F0] p-3.5 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<h3 class="font-label-md text-label-md uppercase tracking-wider text-primary font-bold text-[11px]">4. Unfair Advantage</h3>
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="text-black"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+</div>
+<ul class="space-y-1.5 text-[11px] text-on-surface-variant list-disc pl-3.5 leading-snug">
+<li>Ear-Free safety patent-pending tactile mapping architecture.</li>
+<li>95%+ lower cost compared to European competitor 7Sense ($300 vs $12,000).</li>
+<li>Proprietary low-latency edge tactile encoding algorithms.</li>
+</ul>
+</div>
+</div>
+<!-- 5. CUSTOMER SEGMENTS -->
+<div class="col-span-1 bg-white border border-[#E2E8F0] p-3.5 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<h3 class="font-label-md text-label-md uppercase tracking-wider text-primary font-bold text-[11px]">5. Customer Segments</h3>
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="text-black"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+</div>
+<ul class="space-y-1.5 text-[11px] text-on-surface-variant list-disc pl-3.5 leading-snug">
+<li>Primary: Blind & severely visually impaired individuals (40M worldwide).</li>
+<li>Institutional Buyers: Rehabilitation NGOs, Special Education institutions, Ministry of Social Solidarity.</li>
+<li>Early Adopters: Tech-savvy blind professionals and university students.</li>
+</ul>
+</div>
+</div>
+<!-- 6. KEY METRICS -->
+<div class="col-span-2 bg-white border border-[#E2E8F0] p-3.5 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<h3 class="font-label-md text-label-md uppercase tracking-wider text-primary font-bold text-[11px]">6. Key Metrics</h3>
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="text-black"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+</div>
+<div class="grid grid-cols-2 gap-2 text-[11px] text-on-surface-variant">
+<ul class="space-y-1.5 list-disc pl-3.5 leading-snug">
+<li>Obstacle Avoidance Success Rate (&gt;95%).</li>
+<li>User Spatial Orientation Speed (+40% faster navigation).</li>
+</ul>
+<ul class="space-y-1.5 list-disc pl-3.5 leading-snug">
+<li>System End-to-End Latency (&lt;100ms benchmark).</li>
+<li>Device Adoption & Monthly Active Usage rate.</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- 7. CHANNELS -->
+<div class="col-span-3 bg-white border border-[#E2E8F0] p-3.5 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<h3 class="font-label-md text-label-md uppercase tracking-wider text-primary font-bold text-[11px]">7. Channels</h3>
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="text-black"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+</div>
+<ul class="space-y-1.5 text-[11px] text-on-surface-variant list-disc pl-3.5 leading-snug">
+<li>B2B partnerships with blindness associations (e.g., Al Nour Wal Amal, Resala, Baseera).</li>
+<li>Direct-to-Consumer e-commerce & assistive tech hubs.</li>
+<li>Government disability subsidy & medical device inclusion programs.</li>
+</ul>
+</div>
+</div>
+<!-- 8. COST STRUCTURE -->
+<div class="col-span-2 bg-white border border-[#E2E8F0] p-3.5 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<h3 class="font-label-md text-label-md uppercase tracking-wider text-primary font-bold text-[11px]">8. Cost Structure</h3>
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="text-black"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+</div>
+<ul class="space-y-1.5 text-[11px] text-on-surface-variant list-disc pl-3.5 leading-snug">
+<li>Bill of Materials (BOM): ERM/LRA vibration actuators, edge MCU/SoC, camera modules (~$85/unit at volume).</li>
+<li>Manufacturing & Assembly (local fabrication & testing).</li>
+<li>Edge AI inference optimization & R&D.</li>
+</ul>
+</div>
+</div>
+<!-- 9. REVENUE STREAMS -->
+<div class="col-span-3 bg-white border border-[#E2E8F0] p-3.5 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<h3 class="font-label-md text-label-md uppercase tracking-wider text-primary font-bold text-[11px]">9. Revenue Streams</h3>
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="text-black"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+</div>
+<ul class="space-y-1.5 text-[11px] text-on-surface-variant list-disc pl-3.5 leading-snug">
+<li>Hardware Sales: Core Haptic Belt + Vision Sensor kit ($249 - $349 target retail, subsidized via NGOs).</li>
+<li>SaaS Navigation Upgrade: Cloud mapping, indoor spatial updates, custom AI hazard detection ($9.99/mo).</li>
+<li>B2B Training & Maintenance support contracts.</li>
+</ul>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Section -->
+<footer class="w-full max-w-[1440px] mx-auto px-8 py-6 border-t border-outline-variant flex flex-col md:flex-row justify-between items-center text-on-surface-variant font-body-md">
+<div class="font-bold text-primary">Ally Vision</div>
+<div class="text-xs">© 2026 Executive Presentation. All rights reserved.</div>
+<div class="text-xs tracking-wider">Slide 04 // 12</div>
+</footer>
+</body></html>
