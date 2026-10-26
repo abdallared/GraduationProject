@@ -782,17 +782,17 @@ def build_tracker():
     ws4.row_dimensions[team_start_row].height = 26
     
     team_members = [
-        (1, "عبدالله رضا (Abdallah Reda)", "192200212", "قائد الفريق / مهندس أنظمة الرؤية الحاسوبية والذكاء الاصطناعي (Team Lead & Edge AI)", "abdallah.reda@ecu.edu.eg", "01xxxxxxxxx", "ممثل الفريق في استمارات المسابقات"),
-        (2, "فرح تامر (Farah Tamer)", "192200073", "مهندسة معالجة الصور الرقمية والعمق المكاني (Spatial Vision & Depth)", "farah.tamer@ecu.edu.eg", "01xxxxxxxxx", "عضو الفريق"),
-        (3, "طه محمد (Taha Mohamed)", "192200144", "مهندس الأنظمة المدمجة وبروتوكولات الاتصال (Embedded Systems & Serial)", "taha.mohamed@ecu.edu.eg", "01xxxxxxxxx", "عضو الفريق"),
-        (4, "مصطفى محمد (Mostafa Mohamed)", "192200167", "مهندس تدريب نماذج الذكاء الاصطناعي (YOLOv8 & Model Training)", "mostafa.mohamed@ecu.edu.eg", "01xxxxxxxxx", "عضو الفريق"),
-        (5, "ديفيد هاني (David Hany)", "192200193", "مهندس ميكاترونكس والمحركات الدقيقة (Mechatronics & Actuators)", "david.hany@ecu.edu.eg", "01xxxxxxxxx", "عضو الفريق"),
-        (6, "سلمى محمد (Salma Mohamed)", "192200198", "مهندسة تصميم مصفوفة اللمس والتحكم الفيزيائي (Tactile Matrix Design)", "salma.mohamed@ecu.edu.eg", "01xxxxxxxxx", "عضو الفريق"),
-        (7, "فتحي أحمد (Fathy Ahmed)", "192200211", "مهندس تخطيط الممر الآمن وحساب الزوايا (RANSAC & Path Planning)", "fathy.ahmed@ecu.edu.eg", "01xxxxxxxxx", "عضو الفريق"),
-        (8, "محمد محسن (Mohamed Mohsen)", "192200233", "مهندس تصميم الدوائر وتوزيع الطاقة (PCB Layout & Power Management)", "mohamed.mohsen@ecu.edu.eg", "01xxxxxxxxx", "عضو الفريق"),
-        (9, "أحمد رجب (Ahmed Ragab)", "192200247", "مهندس تصميم الشاسيه والمحاكاة الميكانيكية (Ergonomics & CAD)", "ahmed.ragab@ecu.edu.eg", "01xxxxxxxxx", "عضو الفريق"),
-        (10, "حبيبة سعد (Habiba Saad)", "192300005", "مهندسة واجهات المستخدم والمحاكي الافتراضي (GUI Simulator & Testing)", "habiba.saad@ecu.edu.eg", "01xxxxxxxxx", "عضو الفريق"),
-        (11, "هند السيد (Hend Elsayed)", "192300146", "مهندسة توثيق الأبحاث وتجارب المستخدمين (Research & User Testing)", "hend.elsayed@ecu.edu.eg", "01xxxxxxxxx", "عضو الفريق")
+        (1, "عبدالله رضا (Abdallah Reda)", "192200212", "قائد الفريق / مهندس أنظمة الرؤية الحاسوبية والذكاء الاصطناعي (Team Lead & Edge AI)", "abdreda4444@gmail.com", "01019571158", "ممثل الفريق في استمارات المسابقات"),
+        (2, "فرح تامر (Farah Tamer)", "192200073", "مهندسة معالجة الصور الرقمية والعمق المكاني (Spatial Vision & Depth)", "farahtamer244@gmail.com", "01021792897", "عضو الفريق"),
+        (3, "طه محمد (Taha Mohamed)", "192200144", "مهندس الأنظمة المدمجة وبروتوكولات الاتصال (Embedded Systems & Serial)", "tahaomran1236@gmail.com", "01095085404", "عضو الفريق"),
+        (4, "مصطفى محمد (Mostafa Mohamed)", "192200167", "مهندس تدريب نماذج الذكاء الاصطناعي (YOLOv8 & Model Training)", "mostafa.elsayed224mm@gmail.com", "01013141822", "عضو الفريق"),
+        (5, "ديفيد هاني (David Hany)", "192200193", "مهندس ميكاترونكس والمحركات الدقيقة (Mechatronics & Actuators)", "davidhanygirgis@gmail.com", "01276515584", "عضو الفريق"),
+        (6, "سلمى محمد (Salma Mohamed)", "192200198", "مهندسة تصميم مصفوفة اللمس والتحكم الفيزيائي (Tactile Matrix Design)", "salmamohamederg@gmail.com", "01006972073", "عضو الفريق"),
+        (7, "فتحي أحمد (Fathy Ahmed)", "192200211", "مهندس تخطيط الممر الآمن وحساب الزوايا (RANSAC & Path Planning)", "fathyahmedsharaf0@gmail.com", "01002137288", "عضو الفريق"),
+        (8, "محمد محسن (Mohamed Mohsen)", "192200233", "مهندس تصميم الدوائر وتوزيع الطاقة (PCB Layout & Power Management)", "mohmmedmohssen24@gmail.com", "01553666124", "عضو الفريق"),
+        (9, "أحمد رجب (Ahmed Ragab)", "192200247", "مهندس تصميم الشاسيه والمحاكاة الميكانيكية (Ergonomics & CAD)", "ahmedragabkhattab470@gmail.com", "01114205735", "عضو الفريق"),
+        (10, "حبيبة سعد (Habiba Saad)", "192300005", "مهندسة واجهات المستخدم والمحاكي الافتراضي (GUI Simulator & Testing)", "habibasaadsalemnagdyhussien@gmail.com", "01148692466", "عضو الفريق"),
+        (11, "هند السيد (Hend Elsayed)", "192300146", "مهندسة توثيق الأبحاث وتجارب المستخدمين (Research & User Testing)", "hendel7out@gmail.com", "01094449949", "عضو الفريق")
     ]
     
     for row_idx, m_data in enumerate(team_members, team_start_row + 1):
@@ -884,8 +884,13 @@ def build_tracker():
     ws4.column_dimensions["F"].width = 25
 
     out_file = r"d:\ECU\GraduationProject\compitiations\Ally_Vision_Competitions_Master_Tracker.xlsx"
-    wb.save(out_file)
-    print(f"Workbook successfully saved to: {out_file}")
+    try:
+        wb.save(out_file)
+        print(f"Workbook successfully saved to: {out_file}")
+    except PermissionError:
+        fallback_file = r"d:\ECU\GraduationProject\compitiations\Ally_Vision_Competitions_Master_Tracker_Updated.xlsx"
+        wb.save(fallback_file)
+        print(f"Original file is open in Excel. Saved updated copy to: {fallback_file}")
 
 if __name__ == "__main__":
     build_tracker()
