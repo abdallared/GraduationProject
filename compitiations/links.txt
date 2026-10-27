@@ -1,26 +1,26 @@
-1- https://tiec.gov.eg/Arabic/Programs/Start-IT/pages/default.aspx?utm_source=chatgpt.com
-2- https://egyptinnovate.com/en/challenge-center/entrepreneurs-investment-program-eip?utm_source=chatgpt.com
-3- https://www.linkedin.com/posts/meta-for-developers_open-weights-meet-your-favorite-stack-activity-7518735872792428544-o7vM?utm_medium=ios_app&rcm=ACoAAFjgIIsBbj54GaV-16oGSKlVzFkVmXglr9U&utm_source=social_share_send&utm_campaign=copy_link
-4- https://egyptinnovate.com/articles/%D8%A3%D9%87%D9%85-7-%D9%85%D8%B3%D8%A7%D8%A8%D9%82%D8%A7%D8%AA-%D8%B1%D9%88%D8%A8%D9%88%D8%AA%D8%A7%D8%AA-%D9%84%D9%84%D8%B7%D9%84%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85%D8%B5%D8%B1
-5- https://www.ircrobot.org/ar/
-6- https://www.facebook.com/share/p/1HLUjVr3yo/
-7- https://www.asu.edu.eg/ar/10290/news
-8-https://tiec.gov.eg/Arabic/Programs/IBTIECAR/Pages/default.aspx
-9- https://www.facebook.com/share/1LHYYWqeH1/
-10-https://www.facebook.com/share/p/1Epy7TcMCz/
-11- https://www.facebook.com/share/p/19d1S9VSP9/
-12 - https://www.facebook.com/share/17jBa1SBBg/ 
-13- https://egypt.arabiotai.org/
-14 - https://lnkd.in/p/d8hYyyK8
-15- https://forms.gle/ansiLbxGNXWFQcQT9
-16 - تحدي الشباب للروبوتات من أجل الخير (Robotics for Good Youth Challenge 2027)
-17 - مسابقة تصميم الطلاب في مؤتمر التفاعل بين الإنسان والروبوت (HRI 2027 Student Design Competition)
-18 - RoboCup 
-19- Kaggle Medical & AI Competitions) 
-20 - International Robot Challenge 2027
-21- TechForward
-22- TechnoGeeks Future Challenge 2027
-23 - https://itida.gov.eg/Arabic/Programs/Graduation/Pages/default.aspx
-24- https://tiec.gov.eg/Arabic/Programs/IBTIECAR/Pages/default.aspx
-25- https://tiec.gov.eg/Arabic/Programs/IBTIECAR/Pages/default.aspx
-26- IbTIECar
+1- https://tiec.gov.eg/Arabic/Programs/Start-IT/pages/default.aspx?utm_source=chatgpt.com (حاضنة ومسرعة أعمال Start-IT - TIEC)
+2- https://egyptinnovate.com/en/challenge-center/entrepreneurs-investment-program-eip?utm_source=chatgpt.com (برنامج الاستثمار EIP - EgyptInnovate)
+3- https://www.linkedin.com/posts/meta-for-developers_open-weights-meet-your-favorite-stack-activity-7518735872792428544-o7vM (تحدي Meta Open-Weights AI)
+4- https://egyptinnovate.com/articles/%D8%A3%D9%87%D9%85-7-%D9%85%D8%B3%D8%A7%D8%A8%D9%82%D8%A7%D8%AA-%D8%B1%D9%88%D8%A8%D9%88%D8%AA%D8%A7%D8%AA-%D9%84%D9%84%D8%B7%D9%84%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85%D8%B5%D8%B1 (دليل مسابقات الروبوتات في مصر)
+5- https://www.ircrobot.org/ar/ (التحدي الدولي للروبوتات - IRC)
+6- https://www.facebook.com/share/p/1HLUjVr3yo/ (مسابقة صندوق رعاية المبتكرين والنوابغ ISF - وزارة التعليم العالي)
+7- https://www.asu.edu.eg/ar/10290/news (مسابقة الابتكار والريادة ASU iHub - جامعة عين شمس)
+8- https://tiec.gov.eg/Arabic/Programs/IBTIECAR/Pages/default.aspx (برنامج إبتكار IbTIECar لدعم مشاريع التخرج - TIEC)
+9- https://www.facebook.com/share/1LHYYWqeH1/ (مسابقة صنع في مصر - Made In Egypt MIE / IEEE)
+10- https://www.facebook.com/share/p/1Epy7TcMCz/ (أولمبياد الابتكار المصري - وزارة التعليم العالي وصندوق ISF)
+11- https://www.facebook.com/share/p/19d1S9VSP9/ (رالي مصر لريادة الأعمال - Egypt Entrepreneurship Rally)
+12- https://www.facebook.com/share/17jBa1SBBg/ (مسابقة CEDARE للحلول الذكية المستدامة)
+13- https://egypt.arabiotai.org/ (تحدي مصر والعرب للـ IoT والـ AI - Arab IoT & AI Challenge)
+14- https://lnkd.in/p/d8hYyyK8 (إعلان منحة تصنيع GraduTech Round 2 - EME Innovation Labs)
+15- https://forms.gle/ansiLbxGNXWFQcQT9 (استمارة منحة معامل تصنيع EME Innovation Labs Giza)
+16- تحدي الشباب للروبوتات من أجل الخير (Robotics for Good Youth Challenge 2027 - الأمم المتحدة ITU)
+17- مسابقة تصميم الطلاب في مؤتمر التفاعل بين الإنسان والروبوت (HRI 2027 Student Design Competition - IEEE/ACM)
+18- بطولة الروبوتات والذكاء الاصطناعي العالمية (RoboCup Open Challenge)
+19- منافسات كاجل للذكاء الاصطناعي والرؤية الحاسوبية (Kaggle Medical & AI Competitions)
+20- International Robot Challenge 2027 (IRC)
+21- برنامج ومسرعة TechForward للمشاريع الابتكارية العميقة
+22- مسابقة TechnoGeeks Future Challenge 2027
+23- https://itida.gov.eg/Arabic/Programs/Graduation/Pages/default.aspx (برنامج دعم مشاريع التخرج السنوي من ITIDA)
+24- https://lnkd.in/p/eqgBp3t9 (تحدي DEDI للابتكار - UNDP & CREATIVA & ITIDA) [تم التقديم]
+25- https://www.linkedin.com/posts/creativa-hub-alexandria_%D9%84%D9%88-%D8%B9%D9%86%D8%AF%D9%83-%D9%81%D9%83%D8%B1%D8%A9-%D8%AA%D8%BA%D9%8A%D8%B1-%D9%85%D8%B3%D8%AA%D9%82%D8%A8%D9%84-%D8%A7%D9%84%D8%AA%D8%B9%D9%84%D9%8A%D9%85-%D8%A3%D9%88-%D8%A7%D9%84%D8%B1%D8%B9%D8%A7%D9%8A%D8%A9-activity-7518280083271462912--CHD (هاكاثون جينوفيت GENOVATE HACKATHON - كرياتيفا إسكندرية) [تم التقديم]
+26- IbTIECar Demo Day (يوم العرض والتقييم النهائي لحاضنة إبتكار)
